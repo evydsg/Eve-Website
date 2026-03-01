@@ -1,26 +1,8 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
 # ✦ Personal Portfolio — Evelise Guenda
 
 > My personal corner of the internet. A single place to learn everything about who I am — my work, skills, photos, videos, and how to reach me.
 
-🔗 **Live Site:** [yourwebsite.com](https://yourwebsite.com)
+🔗 **Live Site:** (coming soon)
 
 ---
 
@@ -48,11 +30,10 @@ Built with a bold editorial aesthetic using a red, black, white, and navy color 
 ---
 
 ## Tech Stack
-
-- **HTML5** — Structure
-- **CSS3** — Styling, animations, and layout
-- **Vanilla JavaScript** — Interactivity and scroll effects
-- **Google Fonts** — Playfair Display, DM Sans, Bebas Neue
+- **React** — Component-based UI
+- **Vite** — Fast development build tool
+- **CSS3** — Styling and layout
+- **JavaScript** — Interactivity
 
 No frameworks. No dependencies. Just clean, fast code.
 
@@ -132,5 +113,21 @@ Have a question or want to connect?
 
 ---
 
-<p align="center">Made with ♥ and a lot of coffee.</p>
->>>>>>> 285266b8d99f04d157b72a298b63f37c4318591b
+<p align="center">Made with ♥ and a lot of tea.</p>
+
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
