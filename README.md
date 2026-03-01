@@ -73,6 +73,12 @@ Design principles:
     --offwhite: #EDE9E2;
     --gray: #888;
 
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
 ---
 
 ## Customization
