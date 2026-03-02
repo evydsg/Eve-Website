@@ -2,7 +2,7 @@
 
 > My personal corner of the internet. A single place to learn everything about who I am — my work, skills, photos, videos, and how to reach me.
 
-🔗 **Live Site:** (coming soon)
+🔗 **Live Site:** evelisekguenda.com
 
 ---
 
