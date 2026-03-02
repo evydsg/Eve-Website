@@ -2,7 +2,7 @@
 
 > My personal corner of the internet. A single place to learn everything about who I am — my work, skills, photos, videos, and how to reach me.
 
-🔗 **Live Site:** evelisekguenda.com
+🔗 **Live Site:** [evelisekguenda.com](https://evelisekguenda.com/)
 
 https://www.figma.com/design/4AsqrfxZ05DoBWDwifSaSs/Eve-s-Website?node-id=3-2&t=xJ2PvPR9InOhbzTu-1
 ---
