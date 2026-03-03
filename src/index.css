@@ -3,6 +3,23 @@
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23C8102E'/%3E%3C/svg%3E") 8 8, auto;
 }
 
+::-webkit-scrollbar-thumb:hover{
+  background: #C8102E;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #C8102E;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
 *{
   margin: 0;
   padding: 0;
