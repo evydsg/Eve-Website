@@ -376,3 +376,63 @@ body{
 .modal-edge strong {
   color: #C8102E;
 }
+
+/* Work Section */
+.work-section{
+  padding: 60px 40px;
+}
+
+.work-label{
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.work-card{
+  background-color: #000;
+  border-radius: 12px;
+  padding: 40px;
+  min-height: 500px;
+}
+
+.work-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.work-eyebrow{
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #C8102E;
+  margin-bottom: 10px;
+}
+
+.work-title{
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.view-all-btn{
+  border: 1.5px solid #FFFFFF;
+  background: transparent;
+  color: #FFFF;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nonwrap;
+  align-self: center;
+  border-radius: 20px;
+}
+
+.view-all-btn:hover{
+  background: #FFFF;
+}
