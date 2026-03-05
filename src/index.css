@@ -35,9 +35,23 @@ body{
 /* - Navbar -*/
 .navbar{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /*Pushes logo to the left and links to the right */
   align-items: center;
   padding: 24px 48px;
+  position: fixed; /* Keeps navbar visible as user scrolls */
+  top: 0; /*Pins the navbar to the very top of the screen */
+  width: 100%; /*Scretches accross the full page width */
+  z-index: 1000;/*Ensures that navbar sits on top of all other sections */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*Dark sections, eg. hero, work */
+.navbar--dark{
+  color: #FFFFFF
+}
+
+.navbar--light{
+  color: #000;
 }
 
 .navbar-logo{
@@ -85,6 +99,7 @@ body{
 /* - Hero Section */
 .hero{
   padding: 40px 48px;
+  padding-top: 100px; /*Offsets the hero section so that it doesn't hide behind the fixed navbar */
 }
 
 .hero-container{
@@ -148,6 +163,7 @@ body{
 .about{
   background-color: #f5f3ee;
   padding: 80px 48px;
+  padding-top: 100px; /*Offsets the hero section so that it doesn't hide behind the fixed navbar */
 }
 
 .about-container{
@@ -240,6 +256,7 @@ body{
 .skills{
   background-color: #0B1D3A;
   padding: 80px 48px;
+  padding-top: 100px; /*Offsets the hero section so that it doesn't hide behind the fixed navbar */
 }
 
 .skills-label{
@@ -380,6 +397,7 @@ body{
 /* Work Section */
 .work-section{
   padding: 60px 40px;
+  padding-top: 100px; /*Offsets the hero section so that it doesn't hide behind the fixed navbar */
 }
 
 .work-label{
