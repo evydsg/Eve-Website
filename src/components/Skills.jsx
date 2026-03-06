@@ -51,7 +51,7 @@ function Skills() {
   ]
 
   return (
-    <section className="skills" id="skills">
+    <section className="skills" id="skills" data-theme="dark">
       <p className="skills-label">WHAT I DO</p>
       <h2 className="skills-title">Skills & <br /> Expertise</h2>
 

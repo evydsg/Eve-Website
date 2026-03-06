@@ -1,6 +1,6 @@
 function Work(){
     return (
-     <section className="work-section">
+     <section className="work-section" id="work" data-theme="dark">
         <p className="work-label">Work</p>
         <div className="work-card">
             <div className = "work-card-header">

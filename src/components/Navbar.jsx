@@ -4,7 +4,7 @@ function Navbar(){
     const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section[data-theme');
+        const sections = document.querySelectorAll('section[data-theme]');
 
         const observer = new IntersectionObserver(
             (entries) => {

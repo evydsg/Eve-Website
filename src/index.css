@@ -54,6 +54,10 @@ body{
   color: #000;
 }
 
+.navbar--bluenavy{
+  color:#f5f3ee;
+}
+
 .navbar-logo{
   display: flex;
   align-items: flex-end;

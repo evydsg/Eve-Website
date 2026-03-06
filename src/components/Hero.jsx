@@ -1,6 +1,6 @@
 function Hero(){
     return (
-        <section className="hero">
+        <section className="hero" id = "hero" data-theme="dark">
             <div className = "hero-container">
                 <div className = "hero-left">
                     <p className="hero-eyebrow">WELCOME TO MY WORLD</p>
