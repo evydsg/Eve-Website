@@ -493,3 +493,39 @@ body{
   color: #f5f3ee;
   margin: 0;
 }
+
+.tiktok-cta{
+  display: block;
+  background-color: var(--corlor-red);
+  color: #f5f3ee;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.tiktok-cta:hover{
+  background-color: #C8102E;
+}
+
+/*--RESPONSIVE */
+@media(max-width: 768px){
+  .videos{
+    padding: 40px 24px 0;
+  }
+
+  .tiktok-grid{
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .tiktok-cta{
+    max-width: 90%;
+  }
+}
