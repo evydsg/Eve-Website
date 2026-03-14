@@ -58,6 +58,10 @@ body{
   color:#f5f3ee;
 }
 
+.navbar--pinterest{
+  background-color: #C8102E;
+}
+
 .navbar--red{
   color:#f5f3ee
 }
@@ -470,14 +474,14 @@ body{
   margin-bottom: 16px;
 }
 
-.titktok-card{
+.tiktok-card{
   border-radius: 12px;
   overflow: hidden; /*keeps header corners rounded */
 }
 
-.titkok-header{
+.tiktok-header{
   background-color: #C8102E;
-  padding: 40px 48px;
+  padding: 60px 48px;
 }
 
 .tiktok-handle{
@@ -485,6 +489,15 @@ body{
   letter-spacing: 0.15em;
   color: #f5f3ee;
   margin-bottom: 8px;
+}
+
+.tiktok-body {
+  background-color: #000000;
+  padding: 48px 40px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
 }
 
 .tiktok-title{
@@ -496,7 +509,7 @@ body{
 
 .tiktok-cta{
   display: block;
-  background-color: var(--corlor-red);
+  background-color: #C8102E;
   color: #f5f3ee;
   font-size: 12px;
   font-weight: 700;
@@ -511,7 +524,12 @@ body{
 }
 
 .tiktok-cta:hover{
-  background-color: #C8102E;
+  background-color: #a00d24;
+}
+.tiktok-video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /*--RESPONSIVE */
@@ -520,12 +538,185 @@ body{
     padding: 40px 24px 0;
   }
 
+  .tiktok-cta{
+    max-width: 90%;
+  }
+
   .tiktok-grid{
     grid-template-columns: 1fr;
     max-width: 320px;
   }
+}
 
-  .tiktok-cta{
+.tiktok-video-placeholder{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.tiktok-video-card{
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  aspect-ratio: 9 / 16;
+  background-color: #000;
+  width: 100%;
+  min-height: 550px;
+}
+
+.tiktok-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+
+}
+
+/* ============================================================
+   PINTEREST SECTION
+   ============================================================ */
+
+/* Outer section — same padding pattern as other sections */
+.pinterest {
+  background-color: #C8102E;
+  padding: 100px 80px 100px;
+  margin-top: 60px;
+
+}
+
+/* Small floating label above the card */
+.pinterest-outer-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 16px 0;
+}
+
+/* ── CARD ── */
+/* The big red rounded rectangle that holds everything */
+.pinterest-card {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  min-height: 500px;
+}
+
+/* ── HEADER ── */
+.pinterest-header {
+  width: 100%;
+}
+
+.pinterest-title {
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  width: 100%;
+}
+
+/* ── BOARD GRID ── */
+/* 5 boards in a single row on desktop, wraps on smaller screens */
+.pinterest-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* one column per board */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Each board card — square, semi-transparent red with hover */
+.pinterest-board-card {
+  aspect-ratio: 1 / 1;                        /* square */
+  background-color: rgba(255, 255, 255, 0.1); /* subtle white tint on red */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  padding: 24px;
+}
+
+.pinterest-board-card:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* brighter on hover */
+  transform: translateY(-4px);
+}
+
+.pinterest-board-emoji {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.pinterest-board-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── CTA BUTTON ── */
+.pinterest-cta-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pinterest-cta {
+  display: block;
+  border: 1.5px solid rgba(255, 255, 255, 0.6); /* outlined, not filled */
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 24px 0;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.pinterest-cta:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.pinterest * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23FFFFFF'/%3E%3C/svg%3E") 8 8, auto;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .pinterest-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .pinterest {
+    padding: 40px 24px;
+  }
+
+  .pinterest-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+
+  .pinterest-cta {
     max-width: 90%;
   }
 }
