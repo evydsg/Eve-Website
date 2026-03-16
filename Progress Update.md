@@ -67,7 +67,75 @@
 - Replaced the about-me photo with a new image
 
 ### 🔜 Up Next
-- [ ] Plug in TikTok embed iframe (1 video ready, awaiting full URL)
-- [ ] Pinterest section
+- [x] Plug in TikTok embed iframe
+- [x] Pinterest section
 - [ ] Contact section
 
+---
+
+## March 14, 2026
+
+### ✅ TikTok Section — Real Video Embed
+- Plugged in real TikTok video using iframe embed
+- Fixed embed URL format: `embed/v2/` → `embed/` (v2 loads profile view instead of specific video)
+- Added `.tiktok-video-card iframe` CSS rule so iframe fills the card properly
+
+### ✅ TikTok Section — CSS Bug Fixes
+- Added missing `.tiktok-body` CSS (flex column + centered) — this was why the CTA was glued to card 1
+- Fixed `.tiktok-video-placeholder` showing white — added `background-color: #000`
+- Fixed card height by adding `width: 100%` and `min-height` so `aspect-ratio: 9/16` calculates correctly
+- Moved `.tiktok-grid` outside the media query — it only existed on mobile before, so desktop had no grid
+- Fixed mobile media query still using `repeat(3, 1fr)` → changed to `1fr` to stack on small screens
+
+### ✅ Pinterest Section — Built from scratch
+- Created `Pinterest.jsx` with 5 boards: Bible Study, Books, Gym, Nails, OTD
+- Each board card is a clickable `<a>` tag linking directly to the board
+- Boards stored in an array at the top of the component — easy to add more later
+- Created `Pinterest.css` with square `aspect-ratio: 1/1` cards, outlined CTA button, responsive grid
+
+### ✅ Pinterest Section — Styling Fixes
+- Removed card background (red-on-red box) — section background handles the color now
+- Fixed "PINTEREST" label being cut off — adjusted padding
+- Added `background-color: #C8102E` to `.pinterest` section so no black body bleeds through
+- Increased `padding-top` to `160px` so navbar sits cleanly on the red background
+- Used `margin-top: -80px` to close the gap between TikTok and Pinterest sections
+
+### ✅ Navbar — Background Colors Added
+- Added `background-color` to all navbar theme classes (`--dark`, `--light`, `--bluenavy`, `--red`)
+- This prevents the black body from bleeding through as a line between sections
+- Smooth color transitions already working via existing `transition: background-color 0.3s ease`
+
+### ✅ Pinterest — Custom White Cursor
+- Added `.pinterest * { cursor: ... }` with white fill to override the global red cursor
+- Scoped to `.pinterest *` so it only applies inside that section
+
+### ✅ Git — Divergent Branch Resolved
+- Vercel pushed analytics files to remote while local had new commits
+- Resolved with `git config pull.rebase false` → `git pull` → merge commit → `git push`
+
+**Key reminder:** always `git pull` before `git push` at the start of every coding session to avoid divergent branch conflicts.
+
+### 🔜 Up Next
+- [ ] Contact section
+- [ ] SWE / LeetCode section (React implementation)
+- [ ] Photos section
+
+## March 16, 2026
+
+### ✅ Pinterest Section — Layout Redesign
+
+**What was changed:**
+- Redesigned board layout from 5-column emoji grid to vertical stacked cards
+- Each card now has a large cover image area on top and the board name below — more editorial, matches design mockup
+- Reduced featured boards from 5 to 3 using `boards.slice(0, 3)` — CTA still links to all boards
+- Swapped `grid-template-columns: repeat(5, 1fr)` for `flex-direction: column` to stack cards vertically
+- Replaced `aspect-ratio` on cover with fixed `height: 220px` — aspect-ratio caused a huge cover area at full width, pushing emoji to center of a massive block
+- Removed emoji from `.pinterest-board-cover` entirely — cover is now a clean placeholder rectangle ready for real board images
+
+**Key reminder:** `aspect-ratio` is relative to the element's width — on a full-width card it creates a much taller block than expected. Use a fixed `height` when you want consistent sizing regardless of width.
+
+### 🔜 Up Next
+- [ ] Add real Pinterest board cover images to `src/assets/pinterest/` and wire them into the cards
+- [ ] Contact section
+- [ ] SWE / LeetCode section (React implementation)
+- [ ] Photos section

@@ -46,7 +46,11 @@ function Pinterest(){
                         target="_blank"
                         rel="noopener noreferrer"
                         className="pinterest-board-card">
-                            <span className="pinterest-board-emoji">{board.emoji}</span>
+
+                            <div className = "pinterest-board-cover">
+                            
+                            </div>
+
                             <span className="pinterest-board-name">{board.name}</span>
                         </a>
                     ))}

@@ -626,26 +626,25 @@ body{
 /* ── BOARD GRID ── */
 /* 5 boards in a single row on desktop, wraps on smaller screens */
 .pinterest-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* one column per board */
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   width: 100%;
 }
 
 /* Each board card — square, semi-transparent red with hover */
-.pinterest-board-card {
-  aspect-ratio: 1 / 1;                        /* square */
-  background-color: rgba(255, 255, 255, 0.1); /* subtle white tint on red */
+.pinterest-board-card {                       
+  background-color: rgba(255, 255, 255, 0.12); /* subtle white tint on red */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 0;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  padding: 24px;
+  overflow: hidden;
+  transition: transform 0.2 ease;
 }
 
 .pinterest-board-card:hover {
@@ -653,18 +652,24 @@ body{
   transform: translateY(-4px);
 }
 
+.pinterest-board-cover{
+  width: 100%;
+  height: 220px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 .pinterest-board-emoji {
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1;
 }
 
 .pinterest-board-name {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-align: center;
+  padding: 16px 20px;
 }
 
 /* ── CTA BUTTON ── */
@@ -703,7 +708,7 @@ body{
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .pinterest-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+    grid-template-columns: repeat(2, 1fr); /* 3 columns on tablet */
   }
 }
 
@@ -713,7 +718,7 @@ body{
   }
 
   .pinterest-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    grid-template-columns: 1fr;
   }
 
   .pinterest-cta {
