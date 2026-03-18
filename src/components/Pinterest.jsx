@@ -1,20 +1,27 @@
+import bibleCover from '../assets/pinterest/bible-study.jpeg';
+import bookCover from '../assets/pinterest/books.jpg';
+import gymCover from '../assets/pinterest/gym.png';
+
 function Pinterest(){
     const boards = [{
         name: "Bible Study",
         url: "https://www.pinterest.com/eveguenda/bible-study/",
-        emoji: "📖"},
+        emoji: "📖",
+        cover: 'bibleCover'},
     
         {
             name: "Books",
             url:"https://www.pinterest.com/eveguenda/books/",
             emoji: "📚",
+            cover: 'booksCover'
 
         },
         {
             name: "Gym",
             url: "https://www.pinterest.com/eveguenda/gym/",
             emoji: "🏋️",
-        },
+            cover: 'gymCover'
+        }/*,
         {
             name: "Nails",
             url: "https://www.pinterest.com/eveguenda/nails/",
@@ -25,6 +32,7 @@ function Pinterest(){
             url: "https://www.pinterest.com/eveguenda/otd/",
             emoji: "🪞",
           },
+          */
     ];
 
     return (
@@ -48,6 +56,7 @@ function Pinterest(){
                         className="pinterest-board-card">
 
                             <div className = "pinterest-board-cover">
+                                <img src = {board.cover} alt={board.name}/>
                             
                             </div>
 

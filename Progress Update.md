@@ -139,3 +139,25 @@
 - [ ] Contact section
 - [ ] SWE / LeetCode section (React implementation)
 - [ ] Photos section
+
+## March 18, 2026
+
+### ✅ Pinterest Section — Cover Images Added
+
+**What was done:**
+- Saved real Pinterest board cover images locally to `src/assets/pinterest/`
+- Imported all three images into `Pinterest.jsx` using relative import paths
+- Added `cover` property to each board object in the boards array
+- Wired cover images into the JSX using `<img src={board.cover} alt={board.name} />` inside `.pinterest-board-cover`
+
+**Bug fixed:**
+- Import paths were inconsistent across the three imports — one used `./src/assets/`, others used `./assets/`
+- All fixed to `../assets/pinterest/` since `Pinterest.jsx` lives in `src/components/` and needs `../` to go up one level to reach `src/`
+
+**Key reminder:** import paths are relative to the file doing the importing, not the project root. `../` means "go up one folder."
+
+### 🔜 Up Next
+- [ ] Style cover images with `object-fit: cover` so they fill the card cleanly
+- [ ] Contact section
+- [ ] SWE / LeetCode section (React implementation)
+- [ ] Photos section
