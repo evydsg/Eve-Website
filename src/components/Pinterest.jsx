@@ -7,20 +7,20 @@ function Pinterest(){
         name: "Bible Study",
         url: "https://www.pinterest.com/eveguenda/bible-study/",
         emoji: "📖",
-        cover: 'bibleCover'},
+        cover: bibleCover},
     
         {
             name: "Books",
             url:"https://www.pinterest.com/eveguenda/books/",
             emoji: "📚",
-            cover: 'booksCover'
+            cover: bookCover
 
         },
         {
             name: "Gym",
             url: "https://www.pinterest.com/eveguenda/gym/",
             emoji: "🏋️",
-            cover: 'gymCover'
+            cover: gymCover
         }/*,
         {
             name: "Nails",

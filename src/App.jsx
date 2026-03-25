@@ -5,6 +5,7 @@ import Skills from './components/Skills.jsx'
 import Work from './components/Work.jsx'
 import Videos from './components/Videos.jsx'
 import Pinterest from './components/Pinterest.jsx'
+import Contact from './components/Contact.jsx'
 
 function App(){
   return (
@@ -16,6 +17,7 @@ function App(){
       <Work/>
       <Videos/>
       <Pinterest/>
+      <Contact/>
     </div>
   )
 }

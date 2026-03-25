@@ -161,3 +161,29 @@
 - [ ] Contact section
 - [ ] SWE / LeetCode section (React implementation)
 - [ ] Photos section
+
+## Session — March 24, 2026
+
+### Contact Section (In Progress)
+
+Started building the Contact section based on Figma mockup.
+
+**Mockup breakdown:**
+- Red eyebrow label: `GET IN TOUCH`
+- Large italic bold heading: `Let's Connect.`
+- Gray subtext paragraph
+- Red `mailto:` email link
+- Solid red `SEND AN EMAIL` CTA button
+- Four outlined social buttons: TikTok, Instagram, Pinterest, GitHub
+- Footer: `Shalom, Shalom` + copyright line
+
+**Step 1 completed:**
+- Created `Contact.jsx` skeleton in `src/components/`
+- JSX structure in place with all elements and class names
+- Used `data-theme="dark"` for navbar theming
+- Added `mailto:` links for email + CTA button
+- GitHub social button points to `https://github.com/evydsg`
+- Imported and added `<Contact />` to `App.jsx`
+
+**Up next:**
+- Step 2: Write `Contact.css` to style the section
