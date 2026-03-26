@@ -187,3 +187,26 @@ Started building the Contact section based on Figma mockup.
 
 **Up next:**
 - Step 2: Write `Contact.css` to style the section
+
+## March 25, 2026
+
+### Contact Section — CSS + Bug Fixes
+
+**Step 2 completed:**
+- Created `Contact.css` and imported it into `Contact.jsx`
+- Styled all elements: eyebrow label, heading, subtext, email link, CTA button, social buttons, footer
+- Social buttons use outlined style (border only, no fill) with hover fill effect — consistent with About section tags
+- `SEND AN EMAIL` button is solid red rectangle with generous padding
+
+**Bugs caught & fixed:**
+- `className="social=btn"` → `className="social-btn"` on TikTok button (= instead of -)
+- `href="malito:..."` → `href="mailto:..."` on both email links
+- TikTok social button now links to `https://www.tiktok.com/@eve.guenda`
+
+**Key reminder:** a single wrong character in a className (= instead of -) means no styles apply at all — the element falls back to browser defaults, which is why TikTok appeared as a plain purple link.
+
+### 🔜 Up Next
+- [ ] Contact section — final review + commit
+- [ ] SWE / LeetCode section (React implementation)
+- [ ] Photos section
+- [ ] Apply `object-fit: cover` to Pinterest board cover images
