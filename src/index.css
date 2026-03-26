@@ -712,6 +712,111 @@ body{
   object-position: center;
 }
 
+/* - CONTACT -*/
+.contact-section {
+  background-color: #0A0A0A;
+  color: white;
+  text-align: center;
+  padding: 100px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-eyebrow {
+  color: #C0392B;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-heading {
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.contact-subtext {
+  color: #888;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-email {
+  color: #C0392B;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+.contact-btn{
+  background-color: #C0392B;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 22px 120px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ 
+.social-btn {
+  border: 1.5px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 16px 40px;
+}
+
+.social-btn:hover {
+  background-color: white;
+  color: #0A0A0A;
+}
+
+.contact-footer {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-shalom {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 800;
+  margin: 0;
+}
+
+.contact-copyright {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .pinterest-grid {

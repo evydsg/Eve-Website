@@ -22,9 +22,9 @@ function Contact(){
             </a>
 
             <div className="contact-socials">
-                <a href="#" className="social=btn">TIKTOK</a>
+                <a href="https://www.tiktok.com/@eve.guenda" className="social-btn">TIKTOK</a>
                 <a href="#" className="social-btn">INSTAGRAM</a>
-                <a href="#" className="social-btn">PINTEREST</a>
+                <a href="https://www.pinterest.com/eveguenda/" className="social-btn">PINTEREST</a>
                 <a href="https://github.com/evydsg" target="_blank" rel="noreferrer" className="social-btn">GITHUB</a>
             </div>
 
