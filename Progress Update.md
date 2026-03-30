@@ -210,3 +210,27 @@ Started building the Contact section based on Figma mockup.
 - [ ] SWE / LeetCode section (React implementation)
 - [ ] Photos section
 - [ ] Apply `object-fit: cover` to Pinterest board cover images
+
+## March 30, 2026
+
+### SWE Section — JSX Skeleton (Step 1, In Progress)
+
+**What was built:**
+- Created `SWE.jsx` in `src/components/`
+- Added `data-theme="bluenavy"` for navbar theming
+- Skeleton structure in place: eyebrow label, heading, subtitle
+- Tab switcher with two buttons: `⚡ NeetCode` and `🏗 System Design`
+- Stats row with stat boxes (numbers left empty for now)
+- Filter buttons row (labels to be filled in next step)
+- Single placeholder LeetCode card with `data-category`, problem title, notes, and GitHub link
+- Neetcode banner with roadmap link to `https://neetcode.io`
+- System Design tab div stubbed out (empty for now)
+
+**Note:** Stats numbers, filter labels, and card content are intentionally left blank — to be filled in with real data in a later step.
+
+**Up next:**
+- [ ] Continue filling up
+- [ ] Fill in real stat numbers, filter labels, and LeetCode cards
+- [ ] Step 2: Write `SWE.css`
+- [ ] Step 3: Tab switching logic with `useState`
+- [ ] Step 4: Filter logic

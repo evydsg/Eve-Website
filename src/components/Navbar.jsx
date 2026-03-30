@@ -36,9 +36,10 @@ function Navbar(){
                 <li><a href="#work">WORK</a></li>
                 <li><a href="#videos">TIKTOK</a></li>
                 <li><a href="#photos">INSTAGRAM</a></li>
-                <li><a href="#reviews">PINTEREST</a></li>
+                <li><a href="#pinteres">PINTEREST</a></li>
                 <li><a href="#contact">CONTACT</a></li>
                 <li><a href="#reviews">REVIEWS</a></li>
+                <li><a href="#swe">SWE</a></li>
             </ul>
         </nav>
     )
