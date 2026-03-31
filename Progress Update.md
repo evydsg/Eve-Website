@@ -234,3 +234,78 @@ Started building the Contact section based on Figma mockup.
 - [ ] Step 2: Write `SWE.css`
 - [ ] Step 3: Tab switching logic with `useState`
 - [ ] Step 4: Filter logic
+
+## March 31, 2026
+
+### SWE Section — Data Collection (In Progress)
+
+Before filling in the SWE section cards, spent time auditing both GitHub repositories to gather accurate problem data. Uploaded all files from `evydsg/Algorithms-DSA` and `evydsg/System-Design-Beginners`.
+
+**Complete inventory from Algorithms-DSA:**
+
+**Arrays (3 problems):**
+- Concatenation of Array (Easy)
+- Remove Duplicates from Sorted Array (Easy)
+- Remove Element (Easy)
+
+**Stacks (2 problems):**
+- Valid Parentheses (Easy)
+- Min Stack (Medium)
+
+**Backtracking (2 problems):**
+- Path Sum (Medium)
+- Subsets (Medium)
+
+**Binary Search (5 problems):**
+- Binary Search (Easy)
+- Search a 2D Matrix (Medium)
+- First Bad Version (Easy)
+- Guess Number Higher or Lower (Easy)
+- Koko Eating Bananas (Medium)
+
+**Graphs (4 problems):**
+- Max Area of Island (Medium)
+- Number of Islands (Medium)
+- Rotting Oranges (Medium)
+- Shortest Path in Binary Matrix (Medium)
+
+**Linked Lists (5 problems):**
+- Reverse Linked List (Easy)
+- Merge Two Sorted Lists (Easy)
+- Design Browser History (Medium)
+- Design Linked List (Medium)
+- Number of Students Unable to Eat Lunch (Easy)
+
+**Recursion (2 problems):**
+- Reverse Linked List - recursive approach
+- Climbing Stairs (Easy)
+
+**Sorting (5 implementations + 1 problem):**
+- Insertion Sort
+- Bucket Sort
+- Merge Sort
+- Quick Sort
+- Merge K Sorted Lists (Hard)
+
+**Trees (5 problems):**
+- Search in a Binary Search Tree (Easy)
+- Insert into a Binary Search Tree (Medium)
+- Delete Node in a BST (Medium)
+- Binary Tree Inorder Traversal (Easy)
+- Kth Smallest Element in a BST (Medium)
+- Construct Binary Tree from Preorder and Inorder Traversal (Medium) *(notes only)*
+
+**Dynamic Programming:** Notes only (Fibonacci, memoization, tabulation)
+**Heap / Priority Queue:** Notes only (Min/Max Heap, Push/Pop operations)
+
+**Accurate stats for SWE section:**
+- Total problems solved: **29**
+- Easy: **12**
+- Medium: **16**
+- Hard: **1**
+
+**Up next:**
+- [ ] Fill in SWE.jsx cards with real problem data
+- [ ] Step 2: Write SWE.css
+- [ ] Step 3: Tab switching logic with `useState`
+- [ ] Step 4: Filter logic

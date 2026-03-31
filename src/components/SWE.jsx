@@ -66,6 +66,110 @@ function SWE(){
             </div>
 
             <div className="tab-content" id="tab-systemdesign">
+                <div className="stat-box">
+                    <div className="stat-number"></div>
+                        <div className="stat-label">Concepts Studied
+                    </div>
+
+                    <div className="stat-box">
+                        <div className="stat-number"></div>
+                        <div className="stat-label">Systems Designed</div>
+                    </div>
+
+
+                    <div className="stat-box">
+                        <div className="stat-number"></div>
+                        <div className="stat-label">Mock Interviews</div>
+                    </div>
+                </div>
+
+                <div className="sd-grid">
+                    <div className="sd-card">
+                        <div className="sd-card-header">
+                            <span className="sd-icon"></span>
+                            ⚖️
+                            <h3 className="sd-card-title"></h3>
+                        </div>
+
+                        <span className="sd-tag">Core Concept</span>
+                        <p className="sd-notes">Distributes incoming traffic across multiple servers to prevent overload on a single machine.</p>
+                        <ul className="sd-keypoints">
+                        <li>Round Robin — requests distributed evenly in order</li>
+                        <li>Least Connections — route to server with fewest active connections</li>
+                        <li>Consistent Hashing — used in distributed caches like Redis</li>
+                        <li>My note: Think of it as a traffic cop for your servers 🚦</li>
+                        </ul>
+                    </div>
+
+                    <div className="sd-card">
+                        <div className="sd-card-header">
+                            <span className="sd-icon"></span>
+                            ⚖️
+                            <h3 className="sd-card-title"></h3>
+                        </div>
+
+                        <span className="sd-tag">Core Concept</span>
+                        <p className="sd-notes">Distributes incoming traffic across multiple servers to prevent overload on a single machine.</p>
+                        <ul className="sd-keypoints">
+                        <li>Round Robin — requests distributed evenly in order</li>
+                        <li>Least Connections — route to server with fewest active connections</li>
+                        <li>Consistent Hashing — used in distributed caches like Redis</li>
+                        <li>My note: Think of it as a traffic cop for your servers 🚦</li>
+                        </ul>
+                    </div>
+
+                    <div className="sd-card">
+                        <div className="sd-card-header">
+                            <span className="sd-icon"></span>
+                            ⚖️
+                            <h3 className="sd-card-title"></h3>
+                        </div>
+
+                        <span className="sd-tag">Core Concept</span>
+                        <p className="sd-notes">Distributes incoming traffic across multiple servers to prevent overload on a single machine.</p>
+                        <ul className="sd-keypoints">
+                        <li>Round Robin — requests distributed evenly in order</li>
+                        <li>Least Connections — route to server with fewest active connections</li>
+                        <li>Consistent Hashing — used in distributed caches like Redis</li>
+                        <li>My note: Think of it as a traffic cop for your servers 🚦</li>
+                        </ul>
+                    </div>
+
+                    <div className="sd-card">
+                        <div className="sd-card-header">
+                            <span className="sd-icon"></span>
+                            ⚖️
+                            <h3 className="sd-card-title"></h3>
+                        </div>
+
+                        <span className="sd-tag">Core Concept</span>
+                        <p className="sd-notes">Distributes incoming traffic across multiple servers to prevent overload on a single machine.</p>
+                        <ul className="sd-keypoints">
+                        <li>Round Robin — requests distributed evenly in order</li>
+                        <li>Least Connections — route to server with fewest active connections</li>
+                        <li>Consistent Hashing — used in distributed caches like Redis</li>
+                        <li>My note: Think of it as a traffic cop for your servers 🚦</li>
+                        </ul>
+                    </div>
+
+                    <div className="sd-card">
+                        <div className="sd-card-header">
+                            <span className="sd-icon"></span>
+                            ⚖️
+                            <h3 className="sd-card-title"></h3>
+                        </div>
+
+                        <span className="sd-tag">Core Concept</span>
+                        <p className="sd-notes">Distributes incoming traffic across multiple servers to prevent overload on a single machine.</p>
+                        <ul className="sd-keypoints">
+                        <li>Round Robin — requests distributed evenly in order</li>
+                        <li>Least Connections — route to server with fewest active connections</li>
+                        <li>Consistent Hashing — used in distributed caches like Redis</li>
+                        <li>My note: Think of it as a traffic cop for your servers 🚦</li>
+                        </ul>
+                    </div>
+                    
+                </div>
 
             </div>
         </section>
