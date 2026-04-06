@@ -39,7 +39,7 @@ function Navbar(){
                 <li><a href="#pinteres">PINTEREST</a></li>
                 <li><a href="#contact">CONTACT</a></li>
                 <li><a href="#reviews">REVIEWS</a></li>
-                <li><a href="#swe">SWE</a></li>
+                <li><a href="/swe">SWE</a></li>
             </ul>
         </nav>
     )

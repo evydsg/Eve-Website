@@ -309,3 +309,32 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Step 2: Write SWE.css
 - [ ] Step 3: Tab switching logic with `useState`
 - [ ] Step 4: Filter logic
+
+## April 6, 2026
+
+### SWE Section — Routing + Real Data (Step 1 Complete)
+
+**What was done:**
+- Filled in all 29 real problems from `evydsg/Algorithms-DSA` into `SWE.jsx`
+- Problems stored as an array of objects with title, category, notes, and GitHub link
+- Removed difficulty labels — cards are categorized by DSA topic only
+- Filter buttons auto-generated from the problems array using `new Set()`
+- Accurate stats updated: 29 problems solved, 10 topics covered, 2 repos
+
+**React Router setup:**
+- Installed `react-router-dom`
+- Refactored `App.jsx` to use `BrowserRouter`, `Routes`, and `Route`
+- SWE section now lives at its own route `/swe` instead of being embedded in the main page
+- Created `Home` and `SwePage` layout components
+- Updated navbar SWE link from `href="#swe"` to `href="/swe"`
+
+**Bugs fixed:**
+- `App.jsx` had `function App()` defined twice — caused white screen
+- `Home` was referenced but never defined
+- `BrowserRouter`, `Routes`, `Route` were not imported
+
+**Up next:**
+- [ ] Step 2: Write `SWE.css`
+- [ ] Step 3: Tab switching logic with `useState`
+- [ ] Step 4: Filter logic
+- [ ] Fill in real System Design card data
