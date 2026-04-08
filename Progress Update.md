@@ -338,3 +338,112 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Step 3: Tab switching logic with `useState`
 - [ ] Step 4: Filter logic
 - [ ] Fill in real System Design card data
+
+## April 7, 2026
+
+### SWE Section — System Design Tab + Final Polish
+
+**System Design tab completed:**
+- Added real data array with 21 concepts from `evydsg/System-Design-Beginners`
+- Covered 7 topic categories: APIs, Background, Big Data, Caching Basics, Networking, Proxies, Storage
+- Each card has icon, title, tag, notes, 4 key points, and GitHub link
+- Added Design Google Drive as Mock Interview card
+- Updated stats: 21 concepts studied, 7 topics covered, 1 mock interview
+
+**NeetCode banners added to both tabs:**
+- NeetCode tab — links to `https://neetcode.io`
+- System Design tab — links to `https://neetcode.io/roadmap`
+
+**Navbar fixes:**
+- Updated all navbar links from `#section` to `/#section` so they work from the `/swe` route
+- Added spacing between SWE heading and navbar with increased `padding-top`
+
+**React Router setup confirmed working:**
+- `/` loads the main portfolio page
+- `/swe` loads the SWE page with its own Navbar + SWE section
+- SWE link in navbar correctly navigates to `/swe`
+
+### 🔜 Up Next
+- [ ] F1 section (convert HTML prototype to React)
+- [ ] Photos section
+- [ ] Pinterest `object-fit: cover` fix
+
+### -> soon
+- [ ]Media queries
+- [ ]Pinterest
+
+
+## ✅ Completed
+
+### Navbar
+- Fixed position with dynamic theme switching via IntersectionObserver
+- Reads `data-theme` attribute from each section
+- Includes "EG." logo, red dot accent, and "eve__dsg" handle
+- Added `/f1` route link
+
+### Hero
+- Navy card with bold name typography and red accents
+
+### About
+- Cream background, photo frame, bio, red divider, outlined tag buttons
+
+### Skills
+- Navy background, 3×2 grid with modal popups
+- Modals: AI Systems & Automation Engineering, Product Thinking, Startup Leadership, Problem Solving, Mobile Development, Strategic Vision
+
+### Videos / TikTok
+- TikTok embed section
+- Handle: `@eve.guenda`
+- Embed format: `https://www.tiktok.com/embed/[videoID]` (no `v2` in path)
+
+### Pinterest
+- Vertically stacked featured boards layout (3 boards shown via `boards.slice(0, 3)`)
+- Boards: Bible Study, Books, Gym, Nails, OTD
+- Pinterest username: `eveguenda`
+- Images imported from `src/assets/pinterest/`
+
+### Contact
+- Completed with CSS styling
+- Social links include TikTok (`https://www.tiktok.com/@eve.guenda`)
+- Fixed bugs: `className="social=btn"` typo, `href="malito:..."` typos
+
+### SWE Page (`/swe`)
+- Separate route via `react-router-dom`
+- 29 DSA problems across: Arrays, Stacks, Backtracking, Binary Search, Graphs, Linked Lists, Recursion, Sorting, Trees
+- Filter buttons auto-generated with `new Set()`
+- System Design tab stubbed out (pending data)
+
+### F1 Learning Page (`/f1`)
+- Converted HTML prototype to React (`F1learning.jsx` + `F1Learning.css`)
+- 7 cards: How an F1 Car Works, DRS, Pit Stops, Safety Car & VSC, Tire Strategy, Key F1 Rules, What Every Flag Means
+- Filter pills by category: All, The Car, Race Rules, Strategy, Flags
+- Flag grid fixed to 2 columns to prevent overflow
+- Added top padding to clear fixed navbar (`120px`)
+- Added F1 official website banner at the bottom linking to `formula1.com`
+
+### Routing (`App.jsx`)
+- `BrowserRouter` with `Routes` and `Route`
+- Routes: `/` (Home), `/swe` (SwePage), `/f1` (F1Page)
+- Fixed duplicate `function App()` bug
+- Fixed case mismatch: `F1learning` import vs `<F1Learning/>` usage
+
+---
+
+## 🔜 Soon
+
+- [ ] Media queries
+- [ ] Pinterest `object-fit: cover` fix
+- [ ] Projects section
+- [ ] LinkedIn integration
+- [ ] When user clicks on a nav link, scroll directly to that section
+
+---
+
+## 📌 Key Reminders
+
+- Always run `npm` commands from inside `my-portfolio/` — not the root
+- TikTok embeds: no `v2` in the path or it loads a profile instead of the video
+- Image imports in React need unquoted variable references
+- Defining a function twice (e.g. `function App()`) causes white screen bugs
+- One `export default` per file only
+- All routes must live inside a single `function App()`

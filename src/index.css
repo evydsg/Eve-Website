@@ -837,3 +837,703 @@ body{
     max-width: 90%;
   }
 }
+
+/* ── SWE SECTION ── */
+.swe {
+  background-color: #0B1D3A;
+  padding: 120px 60px 80px; /* ← increased top padding */
+  min-height: 100vh;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.swe-label {
+  color: #C8102E;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.swe-title {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.swe-subtitle {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+/* ── TABS ── */
+.swe-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 48px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 6px;
+  width: fit-content;
+}
+
+.swe-tab {
+  padding: 12px 36px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.swe-tab:hover { color: white; }
+.swe-tab.active { background: #C8102E; color: white; }
+
+/* ── TAB CONTENT ── */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── STATS ── */
+.swe-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px 32px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 900;
+  color: #C8102E;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* ── FILTERS ── */
+.swe-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.swe-filter {
+  padding: 10px 28px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.swe-filter:hover { border-color: white; color: white; }
+.swe-filter.active { background: #C8102E; border-color: #C8102E; color: white; }
+
+/* ── LEETCODE CARDS ── */
+.swe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.swe-card {
+  background: #162844;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.swe-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,16,46,0.4);
+}
+
+.swe-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swe-category {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.swe-problem-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.swe-notes {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  flex: 1;
+  margin: 0;
+}
+
+.swe-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.swe-link {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.swe-link:hover { opacity: 0.8; }
+
+.swe-link.github {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── NEETCODE BANNER ── */
+.neetcode-banner {
+  background: rgba(200,16,46,0.08);
+  border: 1px solid rgba(200,16,46,0.2);
+  border-radius: 16px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.neetcode-text h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.neetcode-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.neetcode-btn {
+  padding: 14px 36px;
+  background: #C8102E;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.neetcode-btn:hover { background: #a50d26; }
+
+/* ── SYSTEM DESIGN CARDS ── */
+.sd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sd-card {
+  background: #162844;
+  border-radius: 16px;
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sd-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: #C8102E;
+}
+
+.sd-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,16,46,0.3);
+}
+
+.sd-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.sd-icon { font-size: 28px; }
+
+.sd-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.sd-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(200,16,46,0.15);
+  color: #f87171;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.sd-notes {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+.sd-keypoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.sd-keypoints li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.sd-keypoints li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #C8102E;
+}
+
+/* ── Reset ── */
+.f1-learning *,
+.f1-learning *::before,
+.f1-learning *::after {
+  box-sizing: border-box;
+}
+
+/* ── HEADER ── */
+.learn-hero {
+  background: #0a0a0a;
+  padding: 120px 60px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Giant ghost watermark */
+.learn-hero::before {
+  content: "LEARN";
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 260px;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  color: rgba(200, 16, 46, 0.06);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.learn-label {
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  font-weight: 600;
+  color: #c8102e;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.learn-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 80px;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.learn-title span {
+  color: #c8102e;
+}
+
+.learn-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* ── BEGINNER BADGE ── */
+.beginner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4ade80;
+  margin-bottom: 48px;
+}
+
+/* ── FILTER PILLS ── */
+.learn-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.learn-filter {
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "DM Sans", sans-serif;
+}
+
+.learn-filter:hover {
+  border-color: white;
+  color: white;
+}
+
+.learn-filter.active {
+  background: #c8102e;
+  border-color: #c8102e;
+  color: white;
+}
+
+/* ── CONTENT WRAPPER ── */
+.learn-content {
+  padding: 60px;
+  background: #0a0a0a;
+}
+
+/* ── CARDS GRID ── */
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── INDIVIDUAL CARD ── */
+.learn-card {
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.25s, border-color 0.25s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200, 16, 46, 0.35);
+}
+
+/* Color accent bar */
+.card-bar {
+  height: 4px;
+  width: 100%;
+}
+
+.bar-red    { background: #c8102e; }
+.bar-yellow { background: #f5c518; }
+.bar-blue   { background: #1e90ff; }
+.bar-green  { background: #22c55e; }
+.bar-white  { background: rgba(255, 255, 255, 0.4); }
+.bar-orange { background: #f97316; }
+
+/* Card body */
+.card-body {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-icon {
+  font-size: 36px;
+}
+
+/* Category pill */
+.card-category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(200, 16, 46, 0.12);
+  color: #f87171;
+}
+
+.card-category.yellow { background: rgba(245, 197, 24, 0.12); color: #fde047; }
+.card-category.blue   { background: rgba(30, 144, 255, 0.12); color: #60a5fa; }
+.card-category.green  { background: rgba(34, 197, 94, 0.12);  color: #4ade80; }
+.card-category.white  { background: rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.6); }
+.card-category.orange { background: rgba(249, 115, 22, 0.12); color: #fb923c; }
+
+.card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  flex: 1;
+}
+
+/* Bullet points */
+.card-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.card-points--spaced {
+  margin-top: 12px;
+}
+
+.card-points li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.card-points li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #c8102e;
+}
+
+/* ── DRS VISUAL ── */
+.drs-visual {
+  background: rgba(200, 16, 46, 0.08);
+  border: 1px solid rgba(200, 16, 46, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.drs-label {
+  font-size: 28px;
+  font-weight: 900;
+  color: #c8102e;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.drs-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+}
+
+/* ── TIRE GRID ── */
+.tire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tire-item {
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.tire-item.soft   { background: rgba(200, 16, 46, 0.12); border: 1px solid rgba(200, 16, 46, 0.2); }
+.tire-item.medium { background: rgba(245, 197, 24, 0.1);  border: 1px solid rgba(245, 197, 24, 0.2); }
+.tire-item.hard   { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+.tire-emoji {
+  font-size: 22px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.tire-name {
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+.tire-name.soft   { color: #f87171; }
+.tire-name.medium { color: #fde047; }
+.tire-name.hard   { color: rgba(255, 255, 255, 0.7); }
+
+.tire-desc {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+}
+
+/* ── FLAG GRID ── */
+.flag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.flag-item {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.flag-emoji {
+  font-size: 24px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.flag-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3px;
+}
+
+.flag-meaning {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+}
+
+/* ── F1 BANNER ── */
+.f1-banner {
+  background: #c8102e;
+  padding: 48px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.f1-banner-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.f1-banner-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.f1-banner-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.f1-banner-btn {
+  background: white;
+  color: #c8102e;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  padding: 18px 40px;
+  border-radius: 100px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.f1-banner-btn:hover {
+  transform: scale(1.05);
+  background: #0a0a0a;
+  color: white;
+}

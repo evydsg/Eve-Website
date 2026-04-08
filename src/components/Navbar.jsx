@@ -31,15 +31,16 @@ function Navbar(){
             </div>
 
             <ul className="navbar-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#work">WORK</a></li>
-                <li><a href="#videos">TIKTOK</a></li>
-                <li><a href="#photos">INSTAGRAM</a></li>
-                <li><a href="#pinteres">PINTEREST</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#reviews">REVIEWS</a></li>
-                <li><a href="/swe">SWE</a></li>
+            <li><a href="/#about">ABOUT</a></li>
+            <li><a href="/#skills">SKILLS</a></li>
+            <li><a href="/#work">WORK</a></li>
+            <li><a href="/#videos">TIKTOK</a></li>
+            <li><a href="/#photos">INSTAGRAM</a></li>
+            <li><a href="/#pinteres">PINTEREST</a></li>
+            <li><a href="/#contact">CONTACT</a></li>
+            <li><a href="/#reviews">REVIEWS</a></li>
+            <li><a href="/swe">SWE</a></li>
+            <li><a href="/f1">F1</a></li>
             </ul>
         </nav>
     )
