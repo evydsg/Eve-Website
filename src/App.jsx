@@ -9,7 +9,7 @@ import Pinterest from './components/Pinterest.jsx'
 import Contact from './components/Contact.jsx'
 import SWE from './components/SWE.jsx'
 import F1learning from './components/F1learning.jsx'  // lowercase l
-import StayPositive from './components/Staypositive.jsx'
+import Staypositive from './components/Staypositive.jsx'
 
 function Home() {
   return (
