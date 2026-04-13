@@ -18,7 +18,7 @@ function Home() {
       <Hero/>
       <About/>
       <Skills/>
-      <StayPositive/>
+      <Staypositive/>
       <Videos/>
       <Pinterest/>
       <Contact/>
