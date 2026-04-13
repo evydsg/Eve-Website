@@ -447,3 +447,17 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - Defining a function twice (e.g. `function App()`) causes white screen bugs
 - One `export default` per file only
 - All routes must live inside a single `function App()`
+
+## April 13, 2026
+- Removed work (projects) section to have it linked directly to github
+- Removed instagram 
+- Started brainstorming Stay Positive Section
+
+## Soon
+- Allow users to click in the logo to go homepage
+- [ ] Media queries
+- [ ] Pinterest `object-fit: cover` fix
+- [ ] Projects section
+- [ ] LinkedIn integration
+- [ ] When user clicks on a nav link, scroll directly to that section
+

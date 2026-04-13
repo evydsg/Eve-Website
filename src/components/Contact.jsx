@@ -32,7 +32,7 @@ function Contact(){
                 <p className="contact-shalom">Shalom, Shalom</p>
                 <p className="contact-copyright">
                     © 2026 Evelise Guenda. All rights reserved. <br />
-                    Designed with ❤️ and a lot of tea.
+                    In the meantime, Stay Positive ❤️
                 </p>
             </div>
         </section>

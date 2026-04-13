@@ -27,18 +27,18 @@ function Navbar(){
         <nav className = {`navbar navbar--${theme}`}>
             <div className = "navbar-logo">
                 <h1>EG<span className="red-dot">.</span></h1>
-                <span>eve__dsg</span>
+                <span>staypositive</span>
             </div>
 
             <ul className="navbar-links">
             <li><a href="/#about">ABOUT</a></li>
             <li><a href="/#skills">SKILLS</a></li>
-            <li><a href="/#work">WORK</a></li>
+            <li><a href="https://github.com/evydsg">WORK</a></li>
+            <li><a href="https://www.linkedin.com/in/evelisekguenda/">LINKEDIN</a></li>
+            <li><a href="/#staypositive">STAYPOSITIVE</a></li>
             <li><a href="/#videos">TIKTOK</a></li>
-            <li><a href="/#photos">INSTAGRAM</a></li>
             <li><a href="/#pinteres">PINTEREST</a></li>
             <li><a href="/#contact">CONTACT</a></li>
-            <li><a href="/#reviews">REVIEWS</a></li>
             <li><a href="/swe">SWE</a></li>
             <li><a href="/f1">F1</a></li>
             </ul>

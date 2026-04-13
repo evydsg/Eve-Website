@@ -265,13 +265,18 @@ body{
 }
 
 /* - Skills -*/
-.skills{
+/* ── SKILLS ── */
+.skills {
   background-color: #0B1D3A;
-  padding: 80px 48px;
-  padding-top: 100px; /*Offsets the hero section so that it doesn't hide behind the fixed navbar */
+  padding: 80px 60px;
+  padding-top: 100px;
 }
 
-.skills-label{
+.skills-header {
+  margin-bottom: 56px;
+}
+
+.skills-label {
   color: #C8102E;
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -279,64 +284,103 @@ body{
   margin-bottom: 16px;
 }
 
-.skills-title{
+.skills-title {
   font-size: 48px;
   font-weight: 900;
   color: white;
   line-height: 1.1;
-  margin-bottom: 60px;
+  margin-bottom: 12px;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.skills-subtitle {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+}
+
+/* ── SKILL ROWS ── */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
   gap: 24px;
 }
 
-.skill-card {
-  background-color: #162844;
-  border-radius: 16px;
-  padding: 40px 32px;
+.skill-row:hover {
+  background: rgba(255,255,255,0.06);
+  border-left-color: #C8102E;
+  padding-left: 40px;
+}
+
+.skill-row-left {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  min-height: 200px;
+  gap: 20px;
+  flex: 1;
 }
 
-.skill-card:hover {
-  background-color: #C8102E;
-  transform: translateY(-4px);
+.skill-row-icon {
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
-.skill-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.skill-title {
-  color: white;
-  font-size: 18px;
+.skill-row-title {
+  font-size: 17px;
   font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 10px;
+  color: white;
+  margin-bottom: 4px;
 }
 
-.skill-default {
-  color: rgba(255,255,255,0.6);
+.skill-row-default {
   font-size: 13px;
-  line-height: 1.6;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
 }
 
-/* MODAL */
+.skill-row-tools {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.skill-tool-badge {
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+
+.skill-row-arrow {
+  color: rgba(255,255,255,0.2);
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: all 0.25s;
+}
+
+.skill-row:hover .skill-row-arrow {
+  color: #C8102E;
+  transform: translateX(4px);
+}
+
+/* ── MODAL ── */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -347,7 +391,7 @@ body{
   background: #0B1D3A;
   border-radius: 20px;
   padding: 56px;
-  max-width: 580px;
+  max-width: 600px;
   width: 90%;
   position: relative;
   border: 1px solid rgba(255,255,255,0.1);
@@ -355,14 +399,13 @@ body{
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 20px; right: 24px;
   background: none;
   border: none;
   color: white;
   font-size: 20px;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.5;
   transition: opacity 0.2s;
 }
 
@@ -375,32 +418,47 @@ body{
 }
 
 .modal-title {
-  color: white;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 900;
-  margin-bottom: 24px;
+  color: white;
+  margin-bottom: 16px;
   line-height: 1.2;
 }
 
 .modal-text {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.7);
   font-size: 15px;
   line-height: 1.8;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-.modal-tools, .modal-impact, .modal-edge {
-  color: rgba(255,255,255,0.75);
+.modal-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-tool-chip {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(200,16,46,0.12);
+  color: #f87171;
+  border: 1px solid rgba(200,16,46,0.2);
+}
+
+.modal-impact, .modal-edge {
+  color: rgba(255,255,255,0.7);
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 12px;
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
   border-left: 3px solid #C8102E;
 }
 
-.modal-tools strong,
 .modal-impact strong,
 .modal-edge strong {
   color: #C8102E;
