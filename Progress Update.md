@@ -490,17 +490,43 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Add real link for Stay Positive official website
 - [ ] Add real Google Play Store link for Android download
 
+## Session Update — April 15, 2026
 
-### 🔜 To Do Next (DONE)
+### ✅ Completed Today
 
-- [ ] Add real screenshots to `public/` folder and rename:
-  - `sp-welcome.png`
-  - `sp-meditation.png`
-  - `sp-affirmations.png`
-  - `sp-prayer.png`
-- [ ] Add real link for Stay Positive official website
-- [ ] Add real Google Play Store link for Android download
+**Stay Positive Section**
+- Built full `Staypositive.jsx` component with hero banner, phone mockups, and navy gradient background
+- Added pulsing green "Live & Active" badge and Playfair Display italic title
+- Added "Why I Built This" personal quote card with red accent border
+- Built 3-phone mockup display (main + two offset side phones)
+- Added horizontally scrollable app screens gallery with 4 real screenshots
+- Added 6 feature cards matching actual app screens
+- Added My Role & Contributions section with real resume data
+- Added tech stack chips (Kotlin, Firebase, REST APIs, Figma, Render, Cloudflare, etc.)
+- Fixed multiple JSX errors: & → &amp;, JSX fragments, missing parent element
+- Wrapped return in React Fragment to resolve parent element error
+- Added real screenshots to public/ folder and renamed correctly
+- Added real Stay Positive website and Google Play Store links
 
-TO DO
-- Change color of cursor to be more visible when navbar is red
-- Fix live SWE and live F1
+**Bug Fixes**
+- Fixed Vercel 404 error on direct URL visits (e.g. /swe) by adding vercel.json with SPA rewrite rule
+
+---
+
+### 🔜 To Do Next
+
+**Stay Positive**
+- [ ] Add gratitude section to acknowledge the Stay Positive team
+
+**Navbar & Branding**
+- [ ] Make the EG. logo clickable — scrolls back to the top / main page
+- [ ] Fix cursor color visibility when navbar is over the red hero section
+
+**UI & Interactions**
+- [ ] Add a dynamic mascot/icon that walks around the page and points at the current section
+- [ ] Add music icon button so users can visit my music profile
+- [ ] Change Pinterest board cover images
+- [ ] Add a loading/splash screen before the site appears
+
+**Polish & Responsiveness**
+- [ ] Add media queries for mobile responsiveness across all sections
