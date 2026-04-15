@@ -1,10 +1,10 @@
 function Staypositive() {
-    const screens = [
-      { src: 'my-portfolio/src/assets/sp-welcome.png', label: 'Welcome' },
-      { src: '/Users/evedsg/Desktop/Desktop - Evelise’s MacBook Air/SWE/Projects/Portfolio/Eve-Website/my-portfolio/src/assets/sp-meditation.png', label: 'Guided Meditation' },
-      { src: '/Users/evedsg/Desktop/Desktop - Evelise’s MacBook Air/SWE/Projects/Portfolio/Eve-Website/my-portfolio/src/assets/sp-affirmations.png', label: 'Daily Affirmations' },
-      { src: '/Users/evedsg/Desktop/Desktop - Evelise’s MacBook Air/SWE/Projects/Portfolio/Eve-Website/my-portfolio/src/assets/sp-prayer.png', label: 'Prayer & Devotion' },
-    ]
+  const screens = [
+    { src: '/sp-welcome.png',      label: 'Welcome' },
+    { src: '/sp-meditation.png',   label: 'Guided Meditation' },
+    { src: '/sp-affirmations.png', label: 'Daily Affirmations' },
+    { src: '/sp-prayer.png',       label: 'Prayer & Devotion' },
+  ]
   
     const features = [
       {
@@ -42,7 +42,7 @@ function Staypositive() {
     const roles = [
       {
         strong: 'Founded and lead',
-        rest: ' the entire Stay Positive platform — vision, product, engineering, and branding.',
+        rest: ' the entire Stay Positive platform, vision, product, engineering, and branding.',
       },
       {
         strong: 'Led 3 Android engineers',
@@ -58,10 +58,10 @@ function Staypositive() {
       },
       {
         strong: 'Migrated to Render + Cloudflare',
-        rest: ' — cutting load time from 5 minutes to under 1 minute.',
+        rest: 'cutting load time from 5 minutes to under 1 minute.',
       },
       {
-        strong: 'Designed all Figma screens',
+        strong: 'Designed Figma screens',
         rest: ' across Android, iOS, and web with consistent UI/UX.',
       },
     ]
@@ -118,7 +118,7 @@ function Staypositive() {
   
               <div className="sp-buttons">
                 <a
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.app.staypositive&pli=1"
                   target="_blank"
                   rel="noreferrer"
                   className="sp-btn sp-btn-primary"
@@ -127,7 +127,7 @@ function Staypositive() {
                 </a>
   
                 <a
-                  href="https://yourwebsite.com"
+                  href="https://staypositiveapp.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="sp-btn sp-btn-secondary"
@@ -154,7 +154,7 @@ function Staypositive() {
                 <div className="phone-mockup large">
                   <div className="phone-notch"></div>
                   <img
-                    src="my-portfolio/src/assets/sp-welcome.png"
+                    src="/sp-welcome.png"
                     alt="Welcome to Stay Positive"
                     className="phone-img"
                   />

@@ -489,3 +489,18 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
   - `sp-prayer.png`
 - [ ] Add real link for Stay Positive official website
 - [ ] Add real Google Play Store link for Android download
+
+
+### 🔜 To Do Next (DONE)
+
+- [ ] Add real screenshots to `public/` folder and rename:
+  - `sp-welcome.png`
+  - `sp-meditation.png`
+  - `sp-affirmations.png`
+  - `sp-prayer.png`
+- [ ] Add real link for Stay Positive official website
+- [ ] Add real Google Play Store link for Android download
+
+TO DO
+- Change color of cursor to be more visible when navbar is red
+- Fix live SWE and live F1
