@@ -69,13 +69,26 @@ body{
 .navbar-logo{
   display: flex;
   align-items: flex-end;
-  gap:4px
+  gap:4px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 .navbar-logo h1{
   font-size: 48px;
   font-weight: 900;
   color: inherit;
+}
+
+.navbar-logo:hover h1 {
+  color: #C8102E;
+  transition: color 0.2s ease;
+}
+
+.navbar-logo:hover span {
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s ease;
 }
 
 .red-dot{
@@ -1895,4 +1908,61 @@ body{
   border-color: #C8102E;
   color: white;
   background: rgba(200,16,46,0.08);
+}
+
+/* ── GRATITUDE ── */
+.sp-gratitude {
+  background: linear-gradient(135deg, #0f1a2e, #1a1a2e);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 80px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sp-gratitude-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+  animation: spPulse 2s infinite;
+}
+
+.sp-gratitude-label {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: #C8102E;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.sp-gratitude-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 32px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.sp-gratitude-message {
+  font-size: 18px;
+  line-height: 2;
+  color: rgba(255,255,255,0.7);
+  max-width: 680px;
+  font-style: italic;
+}
+
+.sp-gratitude-line {
+  width: 60px;
+  height: 2px;
+  background: #C8102E;
+  margin: 40px auto;
+}
+
+.sp-gratitude-sig {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
 }

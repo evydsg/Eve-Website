@@ -232,6 +232,22 @@ function Staypositive() {
               ))}
             </div>
           </div>
+
+          {/* GRATITUDE */}
+          <div className="sp-gratitude">
+            <span className="sp-gratitude-icon">🙏</span>
+            <p className="sp-gratitude-label">With a Grateful Heart</p>
+            <h3 className="sp-gratitude-title">To Our Team</h3>
+            <p className="sp-gratitude-message">
+              Thank you so much to everyone that has been part of Stay Positive and 
+              continues to dedicate themselves to this mission. Stay Positive would 
+              not have come to life without you. Thank you for believing in what we 
+              are building together. Grateful for all that you have done and continue 
+              doing. Blessed to have you on this team.
+            </p>
+            <div className="sp-gratitude-line"></div>
+            <p className="sp-gratitude-sig">Evelise Guenda, Founder</p>
+          </div>
         </section>
       </>
     )

@@ -4,31 +4,54 @@ function Navbar(){
     const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section[data-theme]');
-
+        // ── THEME OBSERVER ──
+        const sections = document.querySelectorAll('section[data-theme]')
+      
         const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting){
-                        //when a section is 50% visible, grab its theme
-                        setTheme(entry.target.dataset.theme);
-                    }
-                });
-            },
-            {threshold: 0.5} //triggers when 50% of section is visible
-        );
-
-        sections.forEach((section) => observer.observe(section)); //watch all sections
-
-        return () => observer.disconnect(); //Cleanup when navbar unmounts
-
-        }, []);
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setTheme(entry.target.dataset.theme)
+              }
+            })
+          },
+          { threshold: 0.5 }
+        )
+      
+        sections.forEach((section) => observer.observe(section))
+      
+        // ── CURSOR COLOR ON NAVBAR ──
+        const cursor = document.getElementById('cursor')
+        const navbar = document.querySelector('.navbar')
+      
+        const handleEnter = () => {
+          if (cursor) cursor.style.background = 'white'
+        }
+        const handleLeave = () => {
+          if (cursor) cursor.style.background = '#C8102E'
+        }
+      
+        if (navbar) {
+          navbar.addEventListener('mouseenter', handleEnter)
+          navbar.addEventListener('mouseleave', handleLeave)
+        }
+      
+        // ── CLEANUP ──
+        return () => {
+          observer.disconnect()
+          if (navbar) {
+            navbar.removeEventListener('mouseenter', handleEnter)
+            navbar.removeEventListener('mouseleave', handleLeave)
+          }
+        }
+      
+      }, []);
     return (
         <nav className = {`navbar navbar--${theme}`}>
-            <div className = "navbar-logo">
-                <h1>EG<span className="red-dot">.</span></h1>
-                <span>staypositive</span>
-            </div>
+            <a href="/" className="navbar-logo">
+            <h1>EG<span className="red-dot">.</span></h1>
+            <span>eve__dsg</span>
+            </a>
 
             <ul className="navbar-links">
             <li><a href="/#about">ABOUT</a></li>
