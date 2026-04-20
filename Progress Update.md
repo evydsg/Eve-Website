@@ -530,3 +530,37 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 
 **Polish & Responsiveness**
 - [ ] Add media queries for mobile responsiveness across all sections
+
+## Session Update — April 20, 2026
+
+### ✅ Completed Today
+
+**Stay Positive — Gratitude Section**
+- Added gratitude section at the bottom of Staypositive.jsx
+- Includes heartfelt thank you message to the Stay Positive team
+- Styled with pulsing 🙏 icon, italic Playfair Display title, red divider, and founder signature
+- Reused existing spPulse animation for the icon
+
+**Navbar — Logo**
+- Wrapped EG. logo in an <a href="/"> tag to make it clickable
+- Added hover effect — logo turns red on hover with smooth transition
+- eve__dsg handle fades slightly on hover
+
+**Vercel — 404 Fix**
+- Added vercel.json with SPA rewrite rule to fix direct URL 404 errors (e.g. /swe, /f1)
+
+---
+
+### 🔜 To Do Next
+
+**Navbar**
+- [ ] Fix cursor color visibility when hovering over red navbar — cursor disappears because both are red. Attempted useEffect fix but no change, needs further investigation
+
+**UI & Interactions**
+- [ ] Add music icon button so users can visit music profile
+- [ ] Add loading/splash screen before site appears
+- [ ] Add dynamic mascot/icon that walks around and points at current section
+
+**Polish & Responsiveness**
+- [ ] Media queries for mobile responsiveness across all sections
+- [ ] Change Pinterest board cover images
