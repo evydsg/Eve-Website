@@ -50,7 +50,7 @@ function Navbar(){
         <nav className = {`navbar navbar--${theme}`}>
             <a href="/" className="navbar-logo">
             <h1>EG<span className="red-dot">.</span></h1>
-            <span>eve__dsg</span>
+            <span>staypositive</span>
             </a>
 
             <ul className="navbar-links">

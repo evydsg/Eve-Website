@@ -564,3 +564,38 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 **Polish & Responsiveness**
 - [ ] Media queries for mobile responsiveness across all sections
 - [ ] Change Pinterest board cover images
+
+## Session Update — April 21, 2026
+
+### ✅ Completed Today
+
+**Music Icon Button**
+- Added floating Apple Music button fixed to bottom right corner of the page
+- Links to https://music.apple.com/profile/eveguenda
+- Frosted glass effect with backdrop-filter blur
+- Turns Apple Music red (#FC3C44) on hover with scale animation
+- Always visible on top of all sections with z-index: 999
+
+**Loading / Splash Screen**
+- Built Loader.jsx component with fullscreen red background
+- Shows EG. initials in bold white with a pulsing animation
+- Shows "staypositive" tagline below initials with letter spacing
+- White loading bar fills up over 2 seconds
+- Smoothly fades out after 2 seconds over a 1 second transition
+- Fully removed from DOM after 3 seconds using return null
+- Added to Home function in App.jsx above all other components
+
+---
+
+### 🔜 To Do Next
+
+**Navbar**
+- [ ] Fix cursor color visibility when hovering over red navbar
+      — cursor disappears because both are red, needs investigation
+
+**UI & Interactions**
+- [ ] Dynamic mascot/icon that walks around and points at current section
+
+**Polish & Responsiveness**
+- [ ] Media queries for mobile responsiveness across all sections
+- [ ] Change Pinterest board cover images

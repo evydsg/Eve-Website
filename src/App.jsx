@@ -10,10 +10,12 @@ import Contact from './components/Contact.jsx'
 import SWE from './components/SWE.jsx'
 import F1learning from './components/F1learning.jsx'  // lowercase l
 import Staypositive from './components/Staypositive.jsx'
+import Loader from './components/Loader'
 
 function Home() {
   return (
     <div>
+      <Loader />
       <Navbar/>
       <Hero/>
       <About/>
@@ -22,6 +24,19 @@ function Home() {
       <Videos/>
       <Pinterest/>
       <Contact/>
+
+       {/* Floating Apple Music Button */}
+      
+       <a
+        href="https://music.apple.com/profile/eveguenda"
+        target="_blank"
+        rel="noreferrer"
+        className="music-float"
+        title="My Apple Music"
+      >
+        🎵
+      </a>
+    
     </div>
   )
 }

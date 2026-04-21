@@ -1966,3 +1966,94 @@ body{
   color: rgba(255,255,255,0.4);
   letter-spacing: 0.1em;
 }
+
+/* ── FLOATING MUSIC BUTTON ── */
+.music-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.music-float:hover {
+  background: #FC3C44;
+  border-color: #FC3C44;
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(252, 60, 68, 0.4);
+}
+
+/* ── LOADER ── */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #C8102E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.loader--fade {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.loader-initials {
+  font-size: 100px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.05em;
+  animation: loaderPulse 1s ease-in-out infinite;
+}
+
+.loader-dot {
+  color: rgba(255,255,255,0.5);
+}
+
+.loader-bar {
+  width: 120px;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: white;
+  border-radius: 100px;
+  animation: loaderFill 2s ease forwards;
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.97); }
+}
+
+@keyframes loaderFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
