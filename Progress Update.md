@@ -599,3 +599,43 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 **Polish & Responsiveness**
 - [ ] Media queries for mobile responsiveness across all sections
 - [ ] Change Pinterest board cover images
+
+
+**AI**
+- [ ] AI Chat that gives bible verses based on how someone feels like
+
+## Session Update — April 22, 2026
+
+### ✅ Completed Today
+
+**Music Button**
+- Kept original 🎵 emoji button — clean and simple
+- Links to https://music.apple.com/profile/eveguenda
+- Fixed position bottom right corner with frosted glass effect
+- Turns Apple Music red (#FC3C44) on hover with scale animation
+
+**Stay Positive Mascot**
+- Built Mascot.jsx component using the official Stay Positive SVG logo
+- Logo bounces and sways gently with a smooth animation
+- Green glow shadow pulses underneath
+- Follows scroll position — moves from top to bottom as user scrolls
+- Speech bubble "Stay Positive! 🌿" appears on hover
+- Added to Home function in App.jsx
+- SVG file saved to public/ folder as sp-logo.svg
+
+**EG. Logo**
+- Made logo clickable with <a href="/"> wrapper
+- Turns red on hover with smooth color transition
+- eve__dsg handle fades slightly on hover
+
+---
+
+### 🔜 To Do Next
+
+**Navbar**
+- [ ] Fix cursor color visibility when hovering over red navbar
+      — cursor disappears because both are red, needs investigation
+
+**Polish & Responsiveness**
+- [ ] Media queries for mobile responsiveness across all sections
+- [ ] Change Pinterest board cover images

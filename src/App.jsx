@@ -11,6 +11,8 @@ import SWE from './components/SWE.jsx'
 import F1learning from './components/F1learning.jsx'  // lowercase l
 import Staypositive from './components/Staypositive.jsx'
 import Loader from './components/Loader'
+import Mascot from './components/Mascot.jsx'
+ 
 
 function Home() {
   return (
@@ -24,6 +26,7 @@ function Home() {
       <Videos/>
       <Pinterest/>
       <Contact/>
+      <Mascot />
 
        {/* Floating Apple Music Button */}
       
@@ -34,7 +37,7 @@ function Home() {
         className="music-float"
         title="My Apple Music"
       >
-        🎵
+          🎵
       </a>
     
     </div>
