@@ -639,3 +639,65 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 **Polish & Responsiveness**
 - [ ] Media queries for mobile responsiveness across all sections
 - [ ] Change Pinterest board cover images
+
+**AI**
+- [ ] AI Chat that gives bible verses based on how someone feels like
+
+
+## Session Update — April 23, 2026
+
+### ✅ Completed Today
+
+**Emmanuel AI Chat**
+- Built Emmanuel.jsx — a floating AI chat bubble fixed to the bottom right
+- Named the AI "Emmanuel" (God with us 🕊️)
+- Chat opens/closes with a 🙏 floating button
+- Includes mood chips (Anxious, Sad, Grateful, Lost, Hopeful, Tired)
+- Each response includes: Bible verse, encouragement, prayer
+- Every message ends with "In the meantime, Stay Positive 🌿"
+- Added typing indicator animation while waiting for response
+- Added close button (✕) on the chat header
+- Connected to Claude API for real personalized responses
+
+**Stay Positive Mascot**
+- Replaced red character with official Stay Positive SVG logo
+- Logo bounces and sways with gentle animation
+- Green glow shadow pulses underneath
+- Follows scroll position from top to bottom of page
+- Speech bubble "Stay Positive! 🌿" appears on hover
+- SVG saved to public/ as sp-logo.svg
+
+---
+
+### 🐛 Bug To Fix Next Session
+
+**Emmanuel — CORS Error**
+- API calls to Anthropic from the browser are blocked by CORS policy
+- Error: "No Access-Control-Allow-Origin header is present"
+- Root cause: Anthropic API cannot be called directly from React frontend
+- API key would also be exposed in the browser — security risk
+- Fix: Create a Vercel Serverless Function (API Route) to proxy the
+  request safely and keep the API key hidden on the server
+
+---
+
+### 🔜 To Do Next
+
+**Emmanuel**
+- [ ] Create Vercel serverless function at api/emmanuel.js
+- [ ] Move API call to the backend route
+- [ ] Store API key safely in Vercel environment variables
+- [ ] Test end to end on localhost and live site
+
+**Polish & Responsiveness**
+- [ ] Media queries for mobile responsiveness across all sections
+- [ ] Fix cursor color on red navbar
+- [ ] Change Pinterest board cover images
+
+**Website**
+- [ ] Change Welcome Screenshoot for Stay Positive
+- [ ] Change Prayer, Daily Affirmations Screenshot for Stay Positive
+- [ ] Add Podcast Page
+- [ ] Increase Padding for TikTok Section
+- [ ] Increase padding for Connect Section
+- [ ] Fix Contact button from Navbar (does not go to Contact section)

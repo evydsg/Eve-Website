@@ -12,6 +12,7 @@ import F1learning from './components/F1learning.jsx'  // lowercase l
 import Staypositive from './components/Staypositive.jsx'
 import Loader from './components/Loader'
 import Mascot from './components/Mascot.jsx'
+import Emmanuel from './components/Emmanuel'
  
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
       <Pinterest/>
       <Contact/>
       <Mascot />
+      <Emmanuel/>
 
        {/* Floating Apple Music Button */}
       
