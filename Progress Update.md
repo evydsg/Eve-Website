@@ -694,7 +694,8 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Fix cursor color on red navbar
 - [ ] Change Pinterest board cover images
 
-**Website**
+**Website Tweeks**
+- [ ] Change Colors in the background
 - [ ] Change Welcome Screenshoot for Stay Positive
 - [ ] Change Prayer, Daily Affirmations Screenshot for Stay Positive
 - [ ] Add Podcast Page

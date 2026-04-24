@@ -30,41 +30,20 @@ function Emmanuel() {
     setIsTyping(true)
 
     try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('/api/emmanuel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: `You are Emmanuel, a compassionate faith-based AI assistant for Eve's Portfolio. 
-
-                When someone shares how they feel, always respond with EXACTLY this format and nothing else:
-
-                VERSE: [A relevant Bible verse in quotes]
-                REF: [Book Chapter:Verse]
-                ENCOURAGEMENT: [2-3 sentences of warm, genuine encouragement]
-                PRAYER: [A short heartfelt prayer of 2-3 sentences ending with Amen]
-
-                Keep your tone warm, gentle, and faith-filled. Always end with exactly: "In the meantime, Stay Positive 🌿"`,
-          messages: [{ role: 'user', content: `I'm feeling ${text}` }]
-        })
+        body: JSON.stringify({ feeling: text })
       })
-
+      
       const data = await response.json()
-      const raw = data.content[0].text
-
-      // Parse response
-      const verse = raw.match(/VERSE:\s*(.+)/)?.[1]?.trim() || ''
-      const ref   = raw.match(/REF:\s*(.+)/)?.[1]?.trim() || ''
-      const enc   = raw.match(/ENCOURAGEMENT:\s*([\s\S]+?)(?=PRAYER:|$)/)?.[1]?.trim() || ''
-      const pray  = raw.match(/PRAYER:\s*([\s\S]+)/)?.[1]?.trim() || ''
-
+      
       setMessages(prev => [...prev, {
         type: 'bot',
-        verse,
-        ref,
-        encouragement: enc,
-        prayer: pray,
+        verse: data.verse,
+        ref: data.ref,
+        encouragement: data.encouragement,
+        prayer: data.prayer,
       }])
 
     } catch (error) {
