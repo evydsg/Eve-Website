@@ -24,20 +24,25 @@ function Emmanuel() {
   const sendMessage = async (text) => {
     if (!text.trim()) return
     setInput('')
-
-    // Add user message
+  
     setMessages(prev => [...prev, { type: 'user', text }])
     setIsTyping(true)
-
+  
+    console.log('1. Calling /api/emmanuel with:', text)
+  
     try {
       const response = await fetch('/api/emmanuel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ feeling: text })
       })
-      
+  
+      console.log('2. Response status:', response.status)
+  
       const data = await response.json()
-      
+  
+      console.log('3. Response data:', data)
+  
       setMessages(prev => [...prev, {
         type: 'bot',
         verse: data.verse,
@@ -45,8 +50,11 @@ function Emmanuel() {
         encouragement: data.encouragement,
         prayer: data.prayer,
       }])
-
+  
     } catch (error) {
+      console.error('4. ERROR caught:', error.message)
+      console.error('5. Full error:', error)
+  
       setMessages(prev => [...prev, {
         type: 'bot',
         verse: '"Come to me, all you who are weary and burdened, and I will give you rest."',
@@ -55,7 +63,7 @@ function Emmanuel() {
         prayer: "Lord, be close to this heart today. Wrap them in Your peace and love. Amen."
       }])
     }
-
+  
     setIsTyping(false)
   }
 
