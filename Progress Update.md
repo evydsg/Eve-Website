@@ -683,14 +683,9 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 
 ### 🔜 To Do Next
 
-**Emmanuel**
-- [ ] Create Vercel serverless function at api/emmanuel.js
-- [ ] Move API call to the backend route
-- [ ] Store API key safely in Vercel environment variables
-- [ ] Test end to end on localhost and live site
-
 **Polish & Responsiveness**
 - [ ] Media queries for mobile responsiveness across all sections
+- [ ] Hamburger menu for navbar
 - [ ] Fix cursor color on red navbar
 - [ ] Change Pinterest board cover images
 
@@ -702,3 +697,51 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Increase Padding for TikTok Section
 - [ ] Increase padding for Connect Section
 - [ ] Fix Contact button from Navbar (does not go to Contact section)
+
+## Session Update — April 24, 2026
+
+### ✅ Completed Today
+
+**Emmanuel AI Chat — FULLY WORKING! 🙏**
+- Fixed CORS error by creating a Vercel serverless function at api/emmanuel.js
+- API call now goes React → Vercel Function → Anthropic API (secure & no CORS!)
+- Stored ANTHROPIC_API_KEY safely in Vercel environment variables
+- Fixed vercel.json syntax error (double curly braces)
+- Fixed model name to claude-sonnet-4-5
+- Added Anthropic API credits to enable the service
+- Debugged using console.log steps and Vercel Function logs
+- Emmanuel now gives real personalized responses including:
+  - 📖 Bible verse relevant to how the user feels
+  - 💚 Warm encouragement message
+  - 🙏 A heartfelt prayer
+  - 🌿 "In the meantime, Stay Positive" sign off
+- Tested and confirmed working on live site evelisekguenda.com
+
+---
+
+### 🐛 Bugs Fixed This Session
+- CORS policy blocking direct browser → Anthropic API calls
+- vercel.json double curly brace syntax error
+- Wrong model name causing 5XX server errors
+- Missing Anthropic API credits causing invalid_request_error
+- Empty parsed response due to server crash
+
+---
+
+### 🔜 To Do Next
+
+**Polish & Responsiveness**
+- [ ] Media queries for mobile responsiveness across all sections
+- [ ] Hamburger menu for navbar
+- [ ] Fix cursor color on red navbar
+- [ ] Change Pinterest board cover images
+
+**Website Tweeks**
+- [ ] Change Colors in the background
+- [ ] Change Welcome Screenshoot for Stay Positive
+- [ ] Change Prayer, Daily Affirmations Screenshot for Stay Positive
+- [ ] Add Podcast Page
+- [ ] Increase Padding for TikTok Section
+- [ ] Increase padding for Connect Section
+- [ ] Fix Contact button from Navbar (does not go to Contact section)
+
