@@ -745,3 +745,65 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 - [ ] Increase padding for Connect Section
 - [ ] Fix Contact button from Navbar (does not go to Contact section)
 
+
+
+
+### 🔜 To Do Next
+
+**Polish & Responsiveness**
+- [ ] Change Pinterest board cover images
+
+**Website Tweeks**
+- [ ] Change Welcome Screenshoot for Stay Positive
+- [ ] Change Prayer, Daily Affirmations Screenshot for Stay Positive
+- [ ] Add About Podcast Text and Store
+- [ ] Fix Contact & Pinteres button from Navbar (does not go to Contact section)
+
+## Session Update — April 25, 2026
+
+### ✅ Completed Today
+
+**Color Scheme — Midnight Black & Champagne Gold**
+- Replaced entire color palette across all sections
+- Added CSS variables at top of index.css for easy future updates
+- Black backgrounds: #080808 (main), #111111 (cards), #1A1A1A (hover)
+- Champagne gold: #D4AF7A (primary), #E8CEAA (light), #B8933A (dark)
+- Kept original red #C8102E for key accents
+- Updated scrollbar, loader, mascot bubble, Emmanuel chat to champagne
+- Navbar now has frosted glass effect with backdrop-filter blur
+
+**Navbar**
+- Fixed navbar theme switching for light sections (About)
+- navbar--light now has cream background so it's visible on light sections
+- Reduced threshold from 0.5 to 0.1 for faster theme switching
+
+**Contact Section**
+- Increased padding to 160px top, 120px bottom for more visual space
+- Increased heading font size from 72px to 100px for more impact
+- Fixed mailto typo (malito → mailto) on email links
+
+**Hamburger Menu**
+- Fixed mobile menu overlapping hero content by moving it outside the nav tag
+- backdrop-filter on navbar was trapping mobile menu inside stacking context
+- Mobile menu now sits outside nav as a sibling element — covers full screen correctly
+- Updated z-index hierarchy: mobile menu 9000, navbar 9001, hamburger 9002
+
+**Media Queries — Full Mobile Responsiveness**
+- Added comprehensive media queries for all sections at max-width 768px
+- Hero, About, Skills, Stay Positive, TikTok, Pinterest, Contact, SWE, F1 all responsive
+- Mascot hidden on mobile to avoid clutter
+- Emmanuel chat window resizes to 90vw on mobile
+- Floating buttons repositioned for smaller screens
+
+---
+
+### 🔜 To Do Next
+
+**Polish & Responsiveness**
+- [ ] Change Pinterest board cover images
+
+**Website Tweaks**
+- [ ] Change Welcome Screenshot for Stay Positive
+- [ ] Change Prayer & Daily Affirmations screenshots for Stay Positive
+- [ ] Add About Podcast text and store link
+- [ ] Fix Contact & Pinterest links in Navbar (not scrolling to correct sections)

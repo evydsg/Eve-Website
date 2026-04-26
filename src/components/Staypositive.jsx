@@ -81,7 +81,7 @@ function Staypositive() {
   
     return (
       <>
-        <section id="staypositive">
+        <section id="staypositive" data-theme="dark">
           {/* BANNER */}
           <div className="sp-banner">
             <div className="sp-left">

@@ -1,9 +1,9 @@
 function Videos() {
   return (
-    <section className="videos" id="videos" data-theme="red">
+    <section className="videos" id="videos" data-theme="dark">
 
       {/* Outer floating label — sits above the red card */}
-      <p className="tiktok-outer-label">TikTok</p>
+      <p className="tiktok-outer-label"></p>
 
       <div className="tiktok-card">
 
