@@ -1340,3 +1340,97 @@ body {
 @media (max-width: 900px) {
   .pinterest-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── SP EXTRAS (Podcast & Store) ── */
+.sp-extras {
+  padding: 0 60px 60px;
+  background: var(--black-card);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-extra-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: var(--black-hover);
+  border-radius: 20px;
+  padding: 36px 40px;
+  border: 1px solid rgba(212,175,122,0.1);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.sp-extra-card:hover {
+  border-color: rgba(212,175,122,0.3);
+  transform: translateY(-2px);
+}
+
+.sp-extra-icon { font-size: 44px; flex-shrink: 0; }
+
+.sp-extra-info { flex: 1; }
+
+.sp-extra-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--champagne);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sp-extra-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.sp-extra-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray);
+  max-width: 460px;
+}
+
+.sp-extra-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.sp-extra-btn {
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.sp-extra-btn.spotify  { background: #1DB954; color: #000; }
+.sp-extra-btn.spotify:hover { background: #1ed760; }
+
+.sp-extra-btn.apple    { background: #FC3C44; color: white; }
+.sp-extra-btn.apple:hover { background: #e0343b; }
+
+.sp-extra-btn.youtube  { background: #FF0000; color: white; }
+.sp-extra-btn.youtube:hover { background: #cc0000; }
+
+.sp-extra-btn.store    { background: var(--champagne); color: var(--black); }
+.sp-extra-btn.store:hover { background: var(--champagne-light); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sp-extras { padding: 0 24px 48px; }
+  .sp-extra-card { flex-direction: column; align-items: flex-start; padding: 24px; }
+  .sp-extra-btn { width: 100%; }
+}

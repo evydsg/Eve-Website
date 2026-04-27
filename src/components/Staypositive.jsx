@@ -220,6 +220,51 @@ function Staypositive() {
               </div>
             </div>
           </div>
+
+          {/* ── PODCAST & STORE ── */}
+        <div className="sp-extras">
+
+        <div className="sp-extra-card">
+          <span className="sp-extra-icon">🎙️</span>
+          <div className="sp-extra-info">
+            <p className="sp-extra-label">Now Streaming</p>
+            <h3 className="sp-extra-title">Stay Positive Podcast</h3>
+            <p className="sp-extra-desc">
+              Real conversations about faith, mental wellness, growth, and staying
+              positive through life's challenges. New episodes dropping regularly.
+            </p>
+          </div>
+          <div className="sp-extra-buttons">
+            <a href="https://open.spotify.com/show/0YK2VQHelqWwHrdJYmLtk1?si=uI19tu-MRIK2gQNymX_QbA" target="_blank" rel="noreferrer" className="sp-extra-btn spotify">
+              🎵 Spotify
+            </a>
+            <a href="https://podcasts.apple.com/us/podcast/stay-positive-podcast/id1817436407" target="_blank" rel="noreferrer" className="sp-extra-btn apple">
+              🎧 Apple Podcasts
+            </a>
+            <a href="https://www.youtube.com/@staypositive_podcast" target="_blank" rel="noreferrer" className="sp-extra-btn youtube">
+              ▶ YouTube
+            </a>
+          </div>
+        </div>
+
+        <div className="sp-extra-card">
+          <span className="sp-extra-icon">🛍️</span>
+          <div className="sp-extra-info">
+            <p className="sp-extra-label">Official Merch</p>
+            <h3 className="sp-extra-title">Stay Positive Store</h3>
+            <p className="sp-extra-desc">
+              Wear your faith. Shop the official Stay Positive collection —
+              designed to remind you to keep going every single day.
+            </p>
+          </div>
+          <div className="sp-extra-buttons">
+            <a href="https://staypositivestore.com/" target="_blank" rel="noreferrer" className="sp-extra-btn store">
+              🛍️ Shop Now →
+            </a>
+          </div>
+        </div>
+
+</div>
   
           {/* TECH STACK */}
           <div className="sp-tech">
