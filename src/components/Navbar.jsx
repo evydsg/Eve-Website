@@ -69,7 +69,7 @@ function Navbar() {
             <li><a href="https://www.linkedin.com/in/evelisekguenda/">LINKEDIN</a></li>
             <li><a href="/#staypositive">STAYPOSITIVE</a></li>
             <li><a href="/#videos">TIKTOK</a></li>
-            <li><a href="/#pinteres">PINTEREST</a></li>
+            <li><a href="/#pinterest">PINTEREST</a></li>
             <li><a href="/#contact">CONTACT</a></li>
             <li><a href="/swe">SWE</a></li>
             <li><a href="/f1">F1</a></li>
@@ -98,7 +98,7 @@ function Navbar() {
               <li><a href="https://www.linkedin.com/in/evelisekguenda/" onClick={handleLinkClick}>LINKEDIN</a></li>
               <li><a href="/#staypositive" onClick={handleLinkClick}>STAYPOSITIVE</a></li>
               <li><a href="/#videos" onClick={handleLinkClick}>TIKTOK</a></li>
-              <li><a href="/#pinteres" onClick={handleLinkClick}>PINTEREST</a></li>
+              <li><a href="/#pinterest" onClick={handleLinkClick}>PINTEREST</a></li>
               <li><a href="/#contact" onClick={handleLinkClick}>CONTACT</a></li>
               <li><a href="/swe" onClick={handleLinkClick}>SWE</a></li>
               <li><a href="/f1" onClick={handleLinkClick}>F1</a></li>

@@ -839,3 +839,24 @@ Before filling in the SWE section cards, spent time auditing both GitHub reposit
 
 **General**
 - [ ] Add About Podcast text and store link to About section
+
+## Session Update — April 27, 2026
+
+### ✅ Completed Today
+
+**Navbar — Link Fixes**
+- Fixed Pinterest link typo: /#pinteres → /#pinterest
+- Confirmed Contact link /#contact matches id="contact" on Contact section
+- Confirmed Pinterest section has id="pinterest" 
+- Both links now scroll correctly to their sections
+
+---
+
+### 🔜 To Do Next
+
+**Stay Positive**
+- [ ] Change Welcome screenshot for Stay Positive phone mockups
+- [ ] Change Prayer & Daily Affirmations screenshots for Stay Positive
+
+**Pinterest**
+- [ ] Change Pinterest board cover images

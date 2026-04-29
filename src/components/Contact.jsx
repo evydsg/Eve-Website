@@ -1,6 +1,6 @@
 function Contact(){
     return (
-        <section className ="contact-section" data-theme="dark">
+        <section className ="contact-section" id= "contact" data-theme="dark">
 
             <p className="contact-eyebrow">GET IN TOUCH</p>
 
