@@ -1,6 +1,6 @@
 import bibleCover from '../assets/pinterest/bible-study.jpeg';
-import bookCover from '../assets/pinterest/books.jpg';
-import gymCover from '../assets/pinterest/gym.png';
+import bookCover from '../assets/pinterest/books.jpeg';
+import gymCover from '../assets/pinterest/gym.jpeg';
 
 function Pinterest(){
     const boards = [{
