@@ -1,0 +1,370 @@
+/* ── PRIVATE TODO PAGE (/todo) ── loaded only with that route */
+
+/* Sign-in / no-access screens */
+.todo-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh 16px 48px;
+}
+.todo-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--black-card);
+  border: 1px solid rgba(212,175,122,0.2);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+.todo-gate { text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.todo-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: var(--champagne);
+  line-height: 1;
+}
+.todo-muted { color: var(--gray); }
+.todo-error { color: var(--red); font-size: 0.85rem; }
+.todo-error--float {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: var(--black-card); border: 1px solid var(--red); border-radius: 8px; padding: 10px 16px;
+}
+.todo-uid { font-size: 0.8rem; color: var(--gray); word-break: break-all; }
+.todo-uid code { color: var(--champagne-light); }
+
+/* Buttons */
+.todo-btn {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: opacity 0.2s ease;
+}
+.todo-btn:hover { opacity: 0.85; }
+.todo-btn--ghost { background: transparent; border: 1px solid var(--champagne); color: var(--champagne); }
+.todo-btn--danger { background: transparent; border: 1px solid var(--red); color: var(--red); }
+.todo-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--gray);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+.todo-link:hover { color: var(--champagne); }
+.todo-shell button:focus-visible,
+.todo-shell input:focus-visible,
+.todo-modal :is(button, input, select, textarea):focus-visible { outline: 2px solid var(--champagne); outline-offset: 2px; }
+
+/* Board */
+.todo-shell { min-height: 100vh; padding: 28px 0 40px; }
+.todo-topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 8px 20px;
+  flex-wrap: wrap;
+  padding: 0 24px 24px;
+}
+.todo-signout { margin-left: auto; }
+.todo-tabs { display: flex; gap: 8px; }
+.todo-filter {
+  background: none;
+  border: 1px solid rgba(248,244,238,0.15);
+  border-radius: 999px;
+  padding: 4px 14px;
+  color: var(--gray);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.todo-filter:hover { color: var(--white); }
+.todo-filter--on, .todo-filter--on:hover { border-color: var(--champagne); color: var(--champagne); }
+.todo-weeknav { display: flex; align-items: center; gap: 12px; padding: 0 24px 20px; flex-wrap: wrap; }
+.todo-navbtn {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: none; border: 1px solid rgba(248,244,238,0.15); color: var(--white);
+  font-size: 1.1rem; line-height: 1; display: grid; place-items: center; padding: 0 0 2px;
+}
+.todo-navbtn:hover { border-color: var(--champagne); color: var(--champagne); }
+.todo-week { color: var(--gray); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; }
+
+.todo-board {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 24px 16px;
+  scroll-snap-type: x proximity;
+}
+.todo-col {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-snap-align: start;
+  scroll-margin-left: 24px;
+}
+.todo-col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 4px 8px;
+  border-bottom: 2px solid rgba(248,244,238,0.08);
+}
+.todo-col-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  color: var(--white);
+}
+.todo-col-date { font-size: 0.75rem; color: var(--gray); font-variant-numeric: tabular-nums; }
+.todo-col--today .todo-col-head { border-bottom-color: var(--red); }
+.todo-col--today .todo-col-name { color: var(--champagne); }
+
+/* Task cards */
+.todo-group {
+  background: var(--black-card);
+  border: 1px solid rgba(212,175,122,0.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.todo-task { display: flex; align-items: flex-start; gap: 10px; padding: 12px; }
+.todo-task-body { flex: 1; min-width: 0; }
+.todo-task-title {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.todo-task--parent .todo-task-title { font-size: 1rem; font-weight: 600; }
+.todo-task-title:hover { color: var(--champagne-light); }
+.todo-task-meta, .todo-task-notes { font-size: 0.78rem; color: var(--gray); margin-top: 3px; }
+.todo-task-notes { white-space: pre-wrap; overflow-wrap: anywhere; }
+.todo-done .todo-task-title { color: var(--gray); text-decoration: line-through; }
+
+.todo-circle {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(248,244,238,0.45);
+  background: none;
+  color: var(--white);
+  padding: 0;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.todo-circle:hover { border-color: var(--champagne); }
+.todo-circle--done { background: var(--red); border-color: var(--red); }
+.todo-circle--ghost { border-style: dashed; margin-top: 0; }
+
+.todo-subtoggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid rgba(248,244,238,0.07);
+  padding: 8px 12px;
+  color: var(--champagne);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+}
+.todo-subcount { color: var(--gray); }
+.todo-chevron { font-size: 1rem; line-height: 1; transition: transform 0.2s ease; }
+.todo-chevron--open { transform: rotate(90deg); }
+
+.todo-subs { list-style: none; margin: 0; padding: 0; }
+.todo-sub {
+  padding: 10px 12px 10px 22px;
+  border-top: 1px solid rgba(248,244,238,0.07);
+  background: rgba(248,244,238,0.02);
+}
+.todo-sub .todo-circle { width: 15px; height: 15px; }
+
+/* Add task row */
+.todo-add {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px dashed rgba(248,244,238,0.15);
+  border-radius: 12px;
+}
+.todo-add:focus-within { border-color: var(--champagne); border-style: solid; }
+.todo-add input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+}
+.todo-add input::placeholder { color: var(--gray); }
+
+/* Editor modal */
+.todo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  background: rgba(0,0,0,0.7);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.todo-modal {
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--black-card);
+  border: 1px solid rgba(212,175,122,0.25);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.todo-modal-head { display: flex; justify-content: space-between; align-items: center; }
+.todo-modal-head h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  color: var(--champagne);
+}
+.todo-field { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; }
+.todo-field > span {
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.todo-field-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.todo-input {
+  width: 100%;
+  background: var(--black);
+  border: 1px solid rgba(248,244,238,0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color-scheme: dark;
+}
+.todo-input:focus { outline: none; border-color: var(--champagne); }
+.todo-input--small { font-size: 0.8rem; padding: 6px 10px; }
+textarea.todo-input { resize: vertical; }
+.todo-toggle { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--white); }
+.todo-toggle input { accent-color: var(--red); width: 16px; height: 16px; }
+.todo-edit-subs { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.todo-edit-sub { display: flex; gap: 8px; align-items: flex-start; width: 100%; }
+.todo-edit-sub-inputs { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.todo-delete {
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 4px 6px;
+}
+.todo-delete:hover { color: var(--red); }
+.todo-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.todo-daypick { display: flex; gap: 6px; flex-wrap: wrap; }
+.todo-daychip {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--black); border: 1px solid rgba(248,244,238,0.15);
+  color: var(--gray); font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.8rem;
+}
+.todo-daychip--on { background: var(--red); border-color: var(--red); color: var(--white); }
+.todo-presets { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.todo-modal-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+/* Progress view */
+.todo-stats { padding: 0 24px; display: flex; flex-direction: column; gap: 16px; max-width: 1100px; }
+.todo-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.todo-tile, .todo-panel {
+  background: var(--black-card);
+  border: 1px solid rgba(212,175,122,0.14);
+  border-radius: 12px;
+  padding: 18px 20px;
+  min-width: 0;
+}
+.todo-tile { display: flex; flex-direction: column; gap: 4px; }
+.todo-tile-label, .todo-panel-sub { font-size: 0.7rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gray); }
+.todo-tile-value {
+  font-family: "Bebas Neue", sans-serif; font-size: 2.8rem; line-height: 1; letter-spacing: 1px;
+  color: var(--champagne); font-variant-numeric: tabular-nums;
+}
+.todo-tile-value small { font-size: 1.3rem; color: var(--gray); }
+.todo-tile-sub { font-size: 0.8rem; color: var(--gray); }
+.todo-panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+.todo-panel--wide { grid-column: 1 / -1; }
+.todo-panel h3 { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 1.5rem; letter-spacing: 1.2px; color: var(--white); }
+.todo-panel-sub { margin: 2px 0 16px; }
+
+.todo-chart { position: relative; height: 200px; padding-left: 36px; }
+.todo-chart-grid { position: absolute; inset: 0 0 22px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+.todo-chart-gridline { border-top: 1px solid rgba(248,244,238,0.07); height: 0; position: relative; }
+.todo-chart-gridline span {
+  position: absolute; right: calc(100% + 8px); top: -0.5em;
+  font-size: 0.65rem; color: var(--gray); font-variant-numeric: tabular-nums;
+}
+.todo-chart-bars { position: relative; height: 100%; display: flex; gap: 6px; }
+.todo-chart-col { flex: 1; min-width: 0; display: flex; flex-direction: column; outline: none; }
+.todo-chart-track { position: relative; flex: 1; display: flex; align-items: flex-end; justify-content: center; }
+.todo-chart-bar {
+  width: 100%; max-width: 34px; background: var(--champagne); opacity: 0.55;
+  border-radius: 4px 4px 0 0; transition: opacity 0.15s ease;
+}
+.todo-chart-bar--now { opacity: 1; }
+.todo-chart-col:hover .todo-chart-bar, .todo-chart-col:focus-visible .todo-chart-bar { opacity: 1; }
+.todo-chart-col:focus-visible .todo-chart-label { color: var(--champagne); }
+.todo-chart-label { height: 22px; padding-top: 6px; text-align: center; font-size: 0.7rem; color: var(--gray); white-space: nowrap; }
+.todo-chart-label--now { color: var(--white); font-weight: 600; }
+.todo-chart-tip {
+  position: absolute; bottom: calc(100% - 8px); left: 50%; transform: translateX(-50%);
+  z-index: 2; width: max-content; max-width: 220px;
+  background: var(--black); border: 1px solid rgba(212,175,122,0.35); border-radius: 8px;
+  padding: 6px 10px; font-size: 0.75rem; color: var(--white); pointer-events: none;
+}
+.todo-chart-col:first-child .todo-chart-tip { left: 0; transform: none; }
+.todo-chart-col:last-child .todo-chart-tip { left: auto; right: 0; transform: none; }
+
+.todo-hbars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.todo-hbar { display: grid; grid-template-columns: minmax(90px, 180px) 1fr 52px; align-items: center; gap: 12px; }
+.todo-hbar-name { font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.todo-hbar-track { height: 10px; border-radius: 4px; background: rgba(248,244,238,0.07); overflow: hidden; }
+.todo-hbar-fill { display: block; height: 100%; background: var(--champagne); border-radius: 4px; }
+.todo-hbar-value { font-size: 0.8rem; color: var(--gray); text-align: right; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 600px) {
+  .todo-stats, .todo-weeknav { padding-left: 16px; padding-right: 16px; }
+  .todo-panels { grid-template-columns: 1fr; }
+  .todo-topbar, .todo-board { padding-left: 16px; padding-right: 16px; }
+  .todo-col { flex-basis: 82vw; scroll-margin-left: 16px; }
+}
+
+/* Email sign-in form */
+.todo-signin { display: flex; flex-direction: column; gap: 10px; width: 100%; }

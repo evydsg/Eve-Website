@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -12,6 +13,8 @@ import Staypositive from './components/Staypositive.jsx'
 import Loader from './components/Loader'
 import Mascot from './components/Mascot.jsx'
 import Emmanuel from './components/Emmanuel'
+// Lazy-loaded so Firebase only downloads when /todo is visited
+const Todo = lazy(() => import('./components/Todo.jsx'))
  
 
 function Home() {
@@ -71,6 +74,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/swe" element={<SwePage/>}/>
         <Route path="/f1" element={<F1Page/>}/>
+        <Route path="/todo" element={<Suspense fallback={null}><Todo/></Suspense>}/>
       </Routes>
     </BrowserRouter>
   )

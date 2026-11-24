@@ -1025,3 +1025,67 @@ In the meantime, Stay Positive. 🌿
 
 - [ ] Add more projects to Work section as they are completed
 - [ ] Continue improving and iterating on the live site
+---
+
+## November 23, 2026
+
+### ✅ Private To-Do Page (/todo) — Built (not live yet)
+
+**What was built:**
+- Hidden `/todo` route, not linked anywhere on the site, only reachable by typing the URL
+- Weekly board with one column per day (Monday → Sunday), modeled on my Reminders setup
+  - Tasks with collapsible subtasks ("Hide 5 Subtasks" / "Show 5 Subtasks")
+  - Optional time, notes, and a Daily / Weekdays / Weekly label
+  - Ticking a task ticks all its subtasks; ticking the last subtask ticks the task
+  - Today's column is highlighted and the board opens scrolled to it
+  - ‹ › arrows to move between weeks
+  - "Add task" row at the bottom of every column
+- Edit window (click a task name):
+  - Pick which days it happens: M T W T F S S, plus shortcuts (Every day, Weekdays, Mon–Sat, Weekends)
+  - "Repeat every week" toggle, time, notes, add/remove subtasks, delete
+- Progress tab with charts:
+  - This week %, today's done / total, perfect-day streak
+  - Bar chart of each day this week and of the last 8 weeks
+  - Per-routine bars (e.g. Reset Routine 18/24)
+- Ticks are saved per date, so repeating tasks start fresh each day and the charts have history
+- Matches the site's look: black cards, champagne Bebas Neue titles, red accents
+- Lazy-loaded, so visitors to the main site don't download any of it
+
+**Backend:**
+- Started with Firebase, then switched to **Supabase** (Postgres + magic-link email sign-in)
+- `supabase/schema.sql` creates the `todos` table, Row Level Security policies, and live sync
+- Privacy: sign-ups turned off so mine is the only account, and RLS means a user can only see their own rows
+
+**New files:**
+- `src/components/Todo.jsx`: sign-in and saving to Supabase
+- `src/components/TodoBoard.jsx`: the board and edit window
+- `src/components/TodoStats.jsx`: Progress tab and charts
+- `src/components/todoUtils.js`: date and progress helpers
+- `src/components/Todo.css`: styles (only load on /todo)
+- `src/supabase.js`, `supabase/schema.sql`, `.env.example`
+
+**Key reminder:** the Supabase URL and publishable key are fine in the browser; Row Level Security is what protects the data. Never put the `service_role` / secret key in the frontend.
+
+**Known issue:** ESLint times out on this machine because iCloud offloads files from the Desktop folder. `vite build` works fine.
+
+---
+
+### 🔜 To Do Next (to make /todo live)
+
+**Supabase dashboard**
+- [ ] Create a Supabase project
+- [ ] SQL Editor → paste and run `supabase/schema.sql`
+- [ ] Authentication → Users → **Add user** with my email (my one account)
+- [ ] Authentication → Sign In / Providers → turn **off** "Allow new users to sign up"
+- [ ] Authentication → URL Configuration → Site URL `https://evelisekguenda.com`, and add redirect URLs `http://localhost:5173/todo` and `https://evelisekguenda.com/todo`
+- [ ] Project Settings → API → copy the Project URL and the publishable (anon) key
+
+**Local**
+- [ ] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY` to `.env.local` (see `.env.example`)
+- [ ] `npm run dev` → `localhost:5173/todo` → sign in with the email link → add a few tasks
+- [ ] Try another email and confirm it can't sign in
+
+**Vercel**
+- [ ] Settings → Environment Variables: add the same two variables (Production + Preview)
+- [ ] Merge the `todo-page` branch into main and push, then Vercel auto-deploys
+- [ ] Test on laptop and phone and confirm tasks sync between them
