@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {
-  DAYS, addDays, dayIndex, progressOn, shortDate, startOfWeek, ymd, isScheduled,
+  DAYS, addDays, dayIndex, progressOn, shortDate, startOfWeek, ymd, occursOn, subsOn,
 } from './todoUtils'
 
 const pct = ({ done, total }) => (total ? done / total : null)
@@ -47,7 +47,6 @@ function BarChart({ data, label }) {
 
 export default function TodoStats({ tasks, now }) {
   const weekStart = startOfWeek(now)
-  const weekKey = ymd(weekStart)
   const todayIdx = dayIndex(now)
 
   // ── This week, day by day ──
@@ -104,9 +103,10 @@ export default function TodoStats({ tasks, now }) {
   const byTask = new Map()
   for (const t of tasks) {
     for (let i = 0; i <= todayIdx; i++) {
-      if (!isScheduled(t, weekKey, i)) continue
-      const key = ymd(addDays(weekStart, i))
-      const subs = t.subtasks || []
+      const date = addDays(weekStart, i)
+      if (!occursOn(t, date)) continue
+      const key = ymd(date)
+      const subs = subsOn(t, date)
       const row = byTask.get(t.title) || { done: 0, total: 0 }
       if (subs.length) {
         row.total += subs.length

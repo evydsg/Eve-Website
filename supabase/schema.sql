@@ -12,9 +12,15 @@ create table public.todos (
   created     text,                              -- Monday of the week it was created
   done        jsonb not null default '{}',       -- { "YYYY-MM-DD": true }
   subtasks    jsonb not null default '[]',       -- [{ id, text, notes, done: {...} }]
+  rule        jsonb,                             -- repeat settings (see todoUtils.js)
   sort_order  bigint not null default 0,
   created_at  timestamptz not null default now()
 );
+
+-- Let signed-in users reach this table through the API (RLS below still
+-- limits them to their own rows). Visitors who aren't signed in get nothing.
+grant select, insert, update, delete on public.todos to authenticated;
+revoke all on public.todos from anon;
 
 -- Row Level Security: a signed-in user can only touch their own rows.
 -- (Sign-ups are turned off in the dashboard, so the only user is you.)

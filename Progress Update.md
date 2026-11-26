@@ -1073,19 +1073,42 @@ In the meantime, Stay Positive. 🌿
 ### 🔜 To Do Next (to make /todo live)
 
 **Supabase dashboard**
-- [ ] Create a Supabase project
-- [ ] SQL Editor → paste and run `supabase/schema.sql`
-- [ ] Authentication → Users → **Add user** with my email (my one account)
-- [ ] Authentication → Sign In / Providers → turn **off** "Allow new users to sign up"
-- [ ] Authentication → URL Configuration → Site URL `https://evelisekguenda.com`, and add redirect URLs `http://localhost:5173/todo` and `https://evelisekguenda.com/todo`
-- [ ] Project Settings → API → copy the Project URL and the publishable (anon) key
+- [x] Create a Supabase project
+- [x] SQL Editor → paste and run `supabase/schema.sql`
+- [x] Authentication → Users → **Add user** with my email (my one account)
+- [x] Authentication → Sign In / Providers → turn **off** "Allow new users to sign up"
+- [x] Authentication → URL Configuration → Site URL `https://evelisekguenda.com`, and add redirect URLs `http://localhost:5173/todo` and `https://evelisekguenda.com/todo`
+- [x] Project Settings → API → copy the Project URL and the publishable (anon) key
 
 **Local**
-- [ ] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY` to `.env.local` (see `.env.example`)
-- [ ] `npm run dev` → `localhost:5173/todo` → sign in with the email link → add a few tasks
+- [x] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY` to `.env.local` (see `.env.example`)
+- [x] `npm run dev` → `localhost:5173/todo` → sign in with the email link → add a few tasks
 - [ ] Try another email and confirm it can't sign in
 
 **Vercel**
-- [ ] Settings → Environment Variables: add the same two variables (Production + Preview)
-- [ ] Merge the `todo-page` branch into main and push, then Vercel auto-deploys
+- [x] Settings → Environment Variables: add the same two variables (Production + Preview)
+- [x] Merge the `todo-page` branch into main and push, then Vercel auto-deploys
 - [ ] Test on laptop and phone and confirm tasks sync between them
+
+## November 25, 2026
+
+### ✅ Private To-Do Page (/todo) — Live
+
+**Setup finished**
+- Supabase project created, `todos` table + security rules set up, sign-ups turned off
+- Supabase keys added to `.env.local` and to Vercel (Production + Preview)
+- Merged `todo-page` into main, so Vercel deploys it to evelisekguenda.com/todo
+
+**New features**
+- Tasks keep repeating every week until I change them; ticks reset each day
+- Custom repeats: every few weeks, monthly (by date or e.g. "first Monday"), one specific date, optional start/end dates
+- Subtasks can have their own schedule ("Same as task" or Custom); they only show on days the task is on
+- Drag tasks to reorder them in a day column (press and hold on phone); ↑ ↓ to reorder subtasks in the edit window
+- Progress charts only count what was scheduled each day
+
+**Fixes**
+- "Could not find the 'rule' column" error: ran `notify pgrst, 'reload schema';` in the SQL Editor so Supabase picks up new columns (now part of `supabase/add-rule-column.sql`)
+
+### 🔜 To Do Next
+- [ ] Test the live /todo on laptop and phone (sign-in link on iPhone, tasks syncing between devices)
+- [ ] Try another email and confirm it can't sign in

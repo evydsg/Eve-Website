@@ -10,6 +10,7 @@ const fromRow = (r) => ({
   notes: r.notes ?? '',
   time: r.time ?? '',
   days: r.days ?? [],
+  rule: r.rule ?? null,
   repeat: r.repeat,
   week: r.week,
   created: r.created,
