@@ -427,28 +427,51 @@ export default function TodoBoard({ tasks, onAdd, onUpdate, onDelete, onSignOut 
   const [now] = useState(() => new Date())
   const [view, setView] = useState('board')
   const [weekOffset, setWeekOffset] = useState(0)
+  // 'day' shows one day at a time (the default); 'week' shows all seven columns.
+  // The choice is remembered on this device.
+  const [mode, setMode] = useState(() => {
+    try { return localStorage.getItem('todo-mode') || 'day' } catch { return 'day' }
+  })
+  const [dayOffset, setDayOffset] = useState(0)
   const [collapsed, setCollapsed] = useState(() => new Set())
   const [editing, setEditing] = useState(null) // { id, date }
   const boardRef = useRef(null)
   const todayRef = useRef(null)
 
-  const weekStart = addDays(startOfWeek(now), 7 * weekOffset)
-  const weekKey = ymd(weekStart)
-  const todayIdx = weekOffset === 0 ? dayIndex(now) : -1
+  const today = addDays(now, 0) // midnight
+  const todayKey = ymd(today)
+  const selected = addDays(today, dayOffset)
+  const weekStart = addDays(startOfWeek(today), 7 * weekOffset)
+  const dates = mode === 'day' ? [selected] : DAYS.map((_, i) => addDays(weekStart, i))
+  const stripStart = startOfWeek(selected)
+
+  const switchMode = (m) => {
+    if (m === mode) return
+    if (m === 'week') {
+      setWeekOffset(Math.round((stripStart - startOfWeek(today)) / (7 * 864e5)))
+    } else {
+      // Open the day view on today if it's in the week you were looking at, otherwise that week's Monday.
+      const inWeek = ymd(startOfWeek(today)) === ymd(weekStart)
+      setDayOffset(inWeek ? 0 : Math.round((weekStart - today) / 864e5))
+    }
+    setMode(m)
+    try { localStorage.setItem('todo-mode', m) } catch { /* private window: just don't remember */ }
+  }
 
   // Start scrolled to today's column
   useEffect(() => {
     const board = boardRef.current
     const col = todayRef.current
     if (board && col) board.scrollLeft = col.offsetLeft - board.offsetLeft - 16
-  }, [view])
+  }, [view, mode])
 
-  const dayLabel = (i) => {
-    if (i === todayIdx) return 'Today'
-    if (todayIdx >= 0 && i === todayIdx + 1) return 'Tomorrow'
-    return shortDate(addDays(weekStart, i))
+  const dayLabel = (date) => {
+    const key = ymd(date)
+    if (key === todayKey) return 'Today'
+    if (key === ymd(addDays(today, 1))) return 'Tomorrow'
+    return shortDate(date)
   }
-  const meta = (i, t) => [dayLabel(i), formatTime(t.time), repeatLabel(t)].filter(Boolean).join(', ')
+  const meta = (date, t) => [dayLabel(date), formatTime(t.time), repeatLabel(t)].filter(Boolean).join(', ')
 
   const toggleCollapsed = (id) =>
     setCollapsed((prev) => {
@@ -484,12 +507,14 @@ export default function TodoBoard({ tasks, onAdd, onUpdate, onDelete, onSignOut 
   }
 
   // New tasks repeat every week on that day until edited or deleted.
-  const addTask = (day, title) =>
+  const addTask = (date, title) => {
+    const wk = ymd(startOfWeek(date))
     onAdd({
       title, notes: '', time: '',
-      rule: { freq: 'weekly', days: [day], interval: 1, anchor: weekKey, start: null, end: null },
-      created: weekKey, done: {}, subtasks: [], order: Date.now(),
+      rule: { freq: 'weekly', days: [dayIndex(date)], interval: 1, anchor: wk, start: null, end: null },
+      created: wk, done: {}, subtasks: [], order: Date.now(),
     })
+  }
 
   const sensors = useSensors(
     useSensor(MouseSensor, { activationConstraint: { distance: 6 } }),
@@ -548,22 +573,69 @@ export default function TodoBoard({ tasks, onAdd, onUpdate, onDelete, onSignOut 
       ) : (
         <>
           <div className="todo-weeknav">
-            <button className="todo-navbtn" onClick={() => setWeekOffset((w) => w - 1)} aria-label="Previous week">‹</button>
-            <span className="todo-week">Week of {shortDate(weekStart)} – {shortDate(addDays(weekStart, 6))}</span>
-            <button className="todo-navbtn" onClick={() => setWeekOffset((w) => w + 1)} aria-label="Next week">›</button>
-            {weekOffset !== 0 && <button className="todo-link" onClick={() => setWeekOffset(0)}>This week</button>}
+            {mode === 'day' ? (
+              <>
+                <button className="todo-navbtn" onClick={() => setDayOffset((d) => d - 1)} aria-label="Previous day">‹</button>
+                <span className="todo-week">{DAYS[dayIndex(selected)]}, {shortDate(selected)}</span>
+                <button className="todo-navbtn" onClick={() => setDayOffset((d) => d + 1)} aria-label="Next day">›</button>
+                {dayOffset !== 0 && <button className="todo-link" onClick={() => setDayOffset(0)}>Today</button>}
+              </>
+            ) : (
+              <>
+                <button className="todo-navbtn" onClick={() => setWeekOffset((w) => w - 1)} aria-label="Previous week">‹</button>
+                <span className="todo-week">Week of {shortDate(weekStart)} – {shortDate(addDays(weekStart, 6))}</span>
+                <button className="todo-navbtn" onClick={() => setWeekOffset((w) => w + 1)} aria-label="Next week">›</button>
+                {weekOffset !== 0 && <button className="todo-link" onClick={() => setWeekOffset(0)}>This week</button>}
+              </>
+            )}
+            <div className="todo-tabs todo-mode" role="radiogroup" aria-label="View">
+              {['day', 'week'].map((m) => (
+                <button
+                  key={m}
+                  role="radio"
+                  aria-checked={mode === m}
+                  className={`todo-filter ${mode === m ? 'todo-filter--on' : ''}`}
+                  onClick={() => switchMode(m)}
+                >
+                  {m}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="todo-board" ref={boardRef}>
-            {DAYS.map((name, i) => {
-              const date = addDays(weekStart, i)
+          {mode === 'day' && (
+            <div className="todo-strip" role="group" aria-label="Pick a day">
+              {DAYS.map((name, i) => {
+                const date = addDays(stripStart, i)
+                const key = ymd(date)
+                const isSel = key === ymd(selected)
+                return (
+                  <button
+                    key={name}
+                    className={`todo-stripday ${isSel ? 'todo-stripday--on' : ''} ${key === todayKey ? 'todo-stripday--today' : ''}`}
+                    onClick={() => setDayOffset(Math.round((date - today) / 864e5))}
+                    aria-pressed={isSel}
+                    aria-label={`${name} ${shortDate(date)}`}
+                  >
+                    <span>{DAY_LETTERS[i]}</span>
+                    <strong>{date.getDate()}</strong>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+
+          <div className={`todo-board ${mode === 'day' ? 'todo-board--day' : ''}`} ref={boardRef}>
+            {dates.map((date) => {
               const key = ymd(date)
+              const name = DAYS[dayIndex(date)]
+              const isToday = key === todayKey
               const dayTasks = tasks.filter((t) => occursOn(t, date)).sort(sortTasks)
               return (
                 <section
-                  key={name}
-                  className={`todo-col ${i === todayIdx ? 'todo-col--today' : ''}`}
-                  ref={i === todayIdx ? todayRef : undefined}
+                  key={key}
+                  className={`todo-col ${isToday ? 'todo-col--today' : ''}`}
+                  ref={isToday ? todayRef : undefined}
                   aria-label={name}
                 >
                   <div className="todo-col-head">
@@ -585,7 +657,7 @@ export default function TodoBoard({ tasks, onAdd, onUpdate, onDelete, onSignOut 
                           <Circle done={done} onClick={() => toggleTask(t, date, key)} label={`Mark ${t.title} ${done ? 'not done' : 'done'}`} />
                           <div className="todo-task-body">
                             <button className="todo-task-title" onClick={edit}>{t.title}</button>
-                            <div className="todo-task-meta">{meta(i, t)}</div>
+                            <div className="todo-task-meta">{meta(date, t)}</div>
                             {t.notes && <div className="todo-task-notes">{t.notes}</div>}
                           </div>
                         </div>
@@ -624,7 +696,7 @@ export default function TodoBoard({ tasks, onAdd, onUpdate, onDelete, onSignOut 
                   </SortableContext>
                   </DndContext>
 
-                  <AddTask dayName={name} onAdd={(title) => addTask(i, title)} />
+                  <AddTask dayName={name} onAdd={(title) => addTask(date, title)} />
                 </section>
               )
             })}
